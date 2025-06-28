@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>RentHIVE - Add New Product</title>
+  </head>
+  <body class="font-sans antialiased bg-gray-50">
+    <!-- Header -->
+    <header class="bg-amber-500 shadow">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <div class="flex items-center space-x-2">
+          <img src="logo.png" alt="RentHIVE" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHIVE</span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="homepage.html" class="text-white hover:underline">Home</a>
+          <a href="rentee_dashboard.html" class="text-white hover:underline">Dashboard</a>
+          <a href="#" class="text-white hover:underline">About</a>
+          <a href="#" class="text-white hover:underline">Contact</a>
+        </nav>
+        <div class="flex space-x-4">
+          <button
+            onclick="window.location.href='rentee_dashboard.html'"
+            class="text-white hover:text-amber-100"
+          >
+            ← Back to Dashboard
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto mt-8 px-4">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <!-- Close Button -->
+        <div class="flex justify-end mb-4">
+          <button
+            onclick="window.location.href='rentee_dashboard.html'"
+            class="text-gray-500 hover:text-amber-500 transition font-medium"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+
+        <h1 class="text-3xl font-bold text-amber-500 mb-6 text-center">
+          Add New Product for Rent
+        </h1>
+
+        <form action="rentee_dashboard.html" method="GET" class="space-y-6">
+          <!-- Product Name -->
+          <div>
+            <label for="productName" class="block text-lg font-semibold text-gray-800 mb-2">
+              Product Name
+            </label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              required
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Enter product name (e.g., CAT 420F2 Backhoe Loader)"
+            />
+          </div>
+
+          <!-- Daily Rate -->
+          <div>
+            <label for="dailyRate" class="block text-lg font-semibold text-gray-800 mb-2">
+              Daily Rate (₱)
+            </label>
+            <input
+              type="number"
+              id="dailyRate"
+              name="dailyRate"
+              required
+              min="1"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="10500"
+            />
+          </div>
+
+          <!-- Product Image -->
+          <div>
+            <label for="productImage" class="block text-lg font-semibold text-gray-800 mb-2">
+              Product Image
+            </label>
+            <input
+              type="file"
+              id="productImage"
+              name="productImage"
+              accept="image/*"
+              required
+              class="w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm file:bg-amber-500 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 hover:file:bg-amber-600 focus:border-amber-400 focus:ring-amber-400"
+            />
+            <p class="text-xs text-gray-500 mt-1">
+              Please upload a clear photo of your product.
+            </p>
+          </div>
+
+          <!-- Condition -->
+          <div>
+            <label for="condition" class="block text-lg font-semibold text-gray-800 mb-2">
+              Condition
+            </label>
+            <textarea
+              id="condition"
+              name="condition"
+              required
+              rows="3"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Good Condition — Fully operational with regular maintenance."
+            ></textarea>
+          </div>
+
+          <!-- Availability -->
+          <div>
+            <label for="availability" class="block text-lg font-semibold text-gray-800 mb-2">
+              Availability
+            </label>
+            <textarea
+              id="availability"
+              name="availability"
+              required
+              rows="2"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Available with 2-day advance booking. Reserve your schedule now."
+            ></textarea>
+          </div>
+
+          <!-- Short Description -->
+          <div>
+            <label for="description" class="block text-lg font-semibold text-gray-800 mb-2">
+              Short Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              rows="3"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Powerful backhoe loader for construction, excavation, and landscaping projects. Reliable CAT performance with easy controls."
+            ></textarea>
+          </div>
+
+          <!-- Specifications -->
+          <div>
+            <label for="specifications" class="block text-lg font-semibold text-gray-800 mb-2">
+              Specifications
+            </label>
+            <textarea
+              id="specifications"
+              name="specifications"
+              required
+              rows="5"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Enter specifications (one per line):
+Engine Power: 93 HP
+Max Dig Depth: 14 feet
+Loader Capacity: 1.3 cubic yards
+4WD for rough terrain"
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">
+              Enter each specification on a new line.
+            </p>
+          </div>
+
+          <!-- Expected Defects / Issues -->
+          <div>
+            <label for="defects" class="block text-lg font-semibold text-gray-800 mb-2">
+              Expected Defects / Issues
+            </label>
+            <textarea
+              id="defects"
+              name="defects"
+              rows="3"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Minor hydraulic seepage. Some cosmetic paint wear typical of rental units."
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">
+              Be honest about any defects or issues (optional).
+            </p>
+          </div>
+
+          <!-- Owner Conditions -->
+          <div>
+            <label for="ownerConditions" class="block text-lg font-semibold text-gray-800 mb-2">
+              Owner Conditions
+            </label>
+            <textarea
+              id="ownerConditions"
+              name="ownerConditions"
+              required
+              rows="3"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+              placeholder="Fuel must be refilled before return. Cleaning fee applies if returned dirty. Rental agreement must be signed."
+            ></textarea>
+          </div>
+
+          <!-- Category -->
+          <div>
+            <label for="category" class="block text-lg font-semibold text-gray-800 mb-2">
+              Category
+            </label>
+            <select
+              id="category"
+              name="category"
+              required
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+            >
+              <option value="">Select Category</option>
+              <option value="vehicles">Vehicles</option>
+              <option value="construction">Construction Equipment</option>
+              <option value="tools">Tools</option>
+              <option value="electronics">Electronics</option>
+              <option value="camera">Camera & Photography</option>
+              <option value="sports">Sports & Recreation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Advance Booking Required -->
+          <div>
+            <label for="advanceBooking" class="block text-lg font-semibold text-gray-800 mb-2">
+              Advance Booking Required (Days)
+            </label>
+            <input
+              type="number"
+              id="advanceBooking"
+              name="advanceBooking"
+              min="0"
+              max="30"
+              value="1"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
+            />
+            <p class="text-xs text-gray-500 mt-1">
+              How many days in advance should customers book? (0 = same day booking allowed)
+            </p>
+          </div>
+
+          <!-- Submit Buttons -->
+          <div class="flex flex-col md:flex-row gap-4 mt-8">
+            <button
+              type="button"
+              onclick="window.location.href='rentee_dashboard.html'"
+              class="flex-1 py-3 rounded-md border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="flex-1 py-3 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors"
+              onclick="showSuccessMessage()"
+            >
+              Add Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Success Message (Hidden by default) -->
+    <div id="successMessage" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+        <div class="text-green-500 text-6xl mb-4">✓</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Product Added Successfully!</h3>
+        <p class="text-gray-600 mb-4">Your product has been added to your rental listings.</p>
+        <button
+          onclick="window.location.href='rentee_dashboard.html'"
+          class="bg-amber-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-amber-600 transition-colors"
+        >
+          Go to Dashboard
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function showSuccessMessage() {
+        event.preventDefault();
+        document.getElementById('successMessage').classList.remove('hidden');
+        
+        // Auto redirect after 3 seconds
+        setTimeout(() => {
+          window.location.href = 'rentee_dashboard.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
