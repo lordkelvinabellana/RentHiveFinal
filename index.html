@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi" />
+
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>RentHIVE Login</title>
+  </head>
+  <body style="background: url('login_background.svg') center/cover no-repeat">
+    <header class="relative min-h-screen flex items-center justify-center">
+      <div
+        class="relative z-20 max-w-md w-full bg-white bg-opacity-90 backdrop-blur-lg rounded-lg shadow-xl p-8"
+      >
+        <div class="flex flex-col items-center mb-6">
+          <img src="logo.png" alt="RentHIVE Logo" class="h-12 mb-2" />
+          <h1 class="text-3xl font-bold text-gray-800">Welcome to RentHive</h1>
+          <p class="text-gray-600 text-center mt-1">
+            Please sign in to continue
+          </p>
+        </div>
+        <form class="space-y-4" action="homepage.html" method="GET">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
+          >
+            Login
+          </button>
+        </form>
+        <p class="mt-4 text-center text-sm text-gray-600">
+          Don't have an account?
+          <a href="signup.html" class="text-amber-500 hover:underline"
+            >Sign up</a
+          >
+        </p>
+      </div>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>RentHIVE Profile Setup</title>
+  </head>
+  <body
+    style="background: url('profiling_background.svg') center/cover no-repeat"
+  >
+    <!-- Header -->
+    <header class="bg-amber-500 shadow">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <img src="logo.png" alt="RentHIVE Logo" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHIVE</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl mx-auto mt-12 px-4">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-amber-500 mb-2 text-center">
+          Complete Your Profile
+        </h2>
+        <p class="text-gray-600 text-center mb-6">
+          Tell us about yourself to get started on RentHIVE.
+        </p>
+
+        <form action="homepage.html" method="GET" class="space-y-6">
+          <!-- Full Name -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+              placeholder="Your full name"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <!-- Role: Lessee or Leaser -->
+          <fieldset>
+            <legend class="block text-sm font-medium text-gray-700 mb-2">
+              Role
+            </legend>
+            <div class="flex space-x-6">
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="role"
+                  value="lessee"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Lessee (Renter)</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="role"
+                  value="leaser"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Leaser (Owner)</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="role"
+                  value="leaser"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Both</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Address / Location -->
+          <div>
+            <label
+              for="location"
+              class="block text-sm font-medium text-gray-700"
+              >Location / Address</label
+            >
+            <input
+              type="text"
+              id="location"
+              name="location"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+              placeholder="Your address or city"
+            />
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700"
+              >Phone Number</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+              placeholder="+1 (555) 123-4567"
+            />
+          </div>
+
+          <!-- Photo Upload -->
+          <div>
+            <label for="photo" class="block text-sm font-medium text-gray-700">
+              Upload Verification Photo
+            </label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              required
+              class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm file:bg-amber-500 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 hover:file:bg-amber-600 focus:border-amber-400 focus:ring-amber-400"
+            />
+            <p class="text-xs text-gray-500 mt-1">
+              Please upload a clear photo of your ID or yourself for
+              verification.
+            </p>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
+          >
+            Save Profile
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

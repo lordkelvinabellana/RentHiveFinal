@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>RentHIVE Sign Up</title>
+  </head>
+  <body style="background: url('login_background.svg') center/cover no-repeat">
+    <div class="min-h-screen flex items-center justify-center relative">
+      <div
+        class="relative z-10 max-w-md w-full bg-white bg-opacity-90 backdrop-blur-lg rounded-lg shadow-xl p-8"
+      >
+        <div class="flex flex-col items-center mb-6">
+          <img src="logo.png" alt="RentHIVE Logo" class="h-12 mb-2" />
+          <h1 class="text-3xl font-bold text-gray-800 text-center">
+            Create your RentHIVE account
+          </h1>
+          <p class="text-gray-600 text-center mt-1">Sign up to get started</p>
+        </div>
+
+        <form class="space-y-4" action="profiling.html" method="GET">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
+              placeholder="••••••••"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-lime-600 transition-colors duration-200"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        <p class="mt-4 text-center text-sm text-gray-600">
+          Already have an account?
+          <a href="index.html" class="text-amber-500 hover:underline">Log in</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

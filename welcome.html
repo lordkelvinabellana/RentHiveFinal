@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>RentHIVE Welcome</title>
+  </head>
+  <body class="font-sans antialiased bg-gray-50">
+    <!-- Header -->
+    <header class="bg-amber-500 shadow">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <img src="logo.png" alt="RentHIVE Logo" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHIVE</span>
+        </div>
+        <nav class="space-x-4">
+          <a href="profile.html" class="text-white hover:underline text-sm"
+            >Profile</a
+          >
+          <a href="login.html" class="text-white hover:underline text-sm"
+            >Logout</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl mx-auto mt-12 px-4">
+      <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+        <h2 class="text-4xl font-bold text-amber-500 mb-4">
+          Welcome to RentHIVE!
+        </h2>
+        <p class="text-gray-700 mb-6">
+          Your trusted platform for renting and sharing items with your
+          community.
+        </p>
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+          alt="Welcome Illustration"
+          class="w-full rounded-md shadow mb-6 object-cover h-64"
+        />
+
+        <div class="space-y-4">
+          <a
+            href="browse.html"
+            class="block w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
+          >
+            Browse Listings
+          </a>
+          <a
+            href="create-listing.html"
+            class="block w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
+          >
+            Post Your Item
+          </a>
+          <a
+            href="profile.html"
+            class="block w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
+          >
+            Go to Profile
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
