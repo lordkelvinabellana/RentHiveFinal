@@ -227,6 +227,8 @@
             <!-- Action Buttons -->
             <div class="flex flex-col md:flex-row gap-4 mt-8 pt-6 border-t border-gray-200">
               <button
+                id="addToCartBtn"
+                onclick="addToCart('backhoe-loader')"
                 class="flex-1 py-4 rounded-md bg-amber-500 text-white font-bold text-lg hover:bg-amber-600 transition-colors shadow-lg"
               >
                 Add to Cart
@@ -367,5 +369,71 @@
         </div>
       </div>
     </main>
+
+    <script>
+      // Add to Cart functionality
+      let cartItems = new Set(); // Track items in cart
+
+      function addToCart(itemId) {
+        if (cartItems.has(itemId)) {
+          return; // Already in cart, do nothing
+        }
+
+        // Add item to cart
+        cartItems.add(itemId);
+        
+        // Update button state
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        addToCartBtn.innerHTML = `
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          Already in Cart
+        `;
+        addToCartBtn.className = 'flex-1 py-4 rounded-md bg-gray-400 text-white font-bold text-lg cursor-not-allowed transition-colors shadow-lg';
+        addToCartBtn.disabled = true;
+
+        // Show success notification
+        showCartNotification('Added to Cart!', 'success');
+      }
+
+      function showCartNotification(message, type) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `fixed top-4 right-4 px-6 py-4 rounded-md text-white font-medium z-50 transition-all duration-300 transform translate-x-full ${
+          type === 'success' ? 'bg-amber-500' : 'bg-red-500'
+        } shadow-lg`;
+        
+        // Add cart icon and message
+        notification.innerHTML = `
+          <div class="flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+            <span>${message}</span>
+          </div>
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Slide in animation
+        setTimeout(() => {
+          notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove after 3 seconds with slide out animation
+        setTimeout(() => {
+          notification.style.transform = 'translateX(100%)';
+          setTimeout(() => {
+            if (document.body.contains(notification)) {
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      }
+    </script>
+
+
   </body>
 </html>
