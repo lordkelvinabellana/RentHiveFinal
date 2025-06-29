@@ -37,13 +37,11 @@
                 <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
                     <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Profile</a>
                     <a href="renter_dashboard.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Admin Dashboard</a>
+                    <a href="cart.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Cart</a>
                 </div>
             </div>
         </div>
     </header>
-
-
-
 
     <!-- ✅ HERO SECTION -->
     <section class="relative overflow-hidden">
@@ -81,222 +79,299 @@
         >
       </div>
     </section>
-  </body>
-</html>
 
-<!-- ✅ FEATURE ICONS -->
-<section class="bg-white py-8">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6 text-center">
-    <div>
-      <svg
-        class="mx-auto h-12 w-12 text-amber-500 mb-2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 7h18M3 12h18M3 17h18"
-        />
-      </svg>
-      <h3 class="font-bold text-gray-800">Wide Categories</h3>
-      <p class="text-gray-600">
-        From cars to cameras to construction equipment.
-      </p>
-    </div>
-    <div>
-      <svg
-        class="mx-auto h-12 w-12 text-amber-500 mb-2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M5 13l4 4L19 7"
-        />
-      </svg>
-      <h3 class="font-bold text-gray-800">Verified Owners</h3>
-      <p class="text-gray-600">
-        Trust and safety with verified renter profiles.
-      </p>
-    </div>
-    <div>
-      <svg
-        class="mx-auto h-12 w-12 text-amber-500 mb-2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 17v-2a4 4 0 018 0v2M5 10V8a6 6 0 0112 0v2m4 4H5a2 2 0 00-2 2v5h18v-5a2 2 0 00-2-2z"
-        />
-      </svg>
-      <h3 class="font-bold text-gray-800">Flexible Delivery</h3>
-      <p class="text-gray-600">
-        Pickup, delivery, or courier options available.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ✅ RENTAL LISTINGS with Search & Filters -->
-<section id="listings" class="bg-gray-50 py-12">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-amber-500 mb-6 text-center">Available for Rent</h2>
-
-    <div class="bg-white rounded-lg shadow p-0 overflow-hidden max-h-[80vh] flex flex-col">
-      <!-- ✅ Filters (Sticky) -->
-      <div class="bg-white p-4 border-b sticky top-0 z-10 space-y-4 md:space-y-0 md:flex md:items-end md:space-x-4">
-        <div class="flex-1">
-          <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
-          <input id="searchInput" type="text" placeholder="Search by item, owner, or tags" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
+    <!-- ✅ FEATURE ICONS -->
+    <section class="bg-white py-8">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6 text-center">
+        <div>
+          <svg
+            class="mx-auto h-12 w-12 text-amber-500 mb-2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 7h18M3 12h18M3 17h18"
+            />
+          </svg>
+          <h3 class="font-bold text-gray-800">Wide Categories</h3>
+          <p class="text-gray-600">
+            From cars to cameras to construction equipment.
+          </p>
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-          <select id="categorySelect" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
-            <option value="">All Categories</option>
-            <option value="Car">Car</option>
-            <option value="Camera">Camera</option>
-            <option value="Equipment">Equipment</option>
-            <option value="Tools">Tools</option>
-            <option value="Other">Other</option>
-          </select>
+          <svg
+            class="mx-auto h-12 w-12 text-amber-500 mb-2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <h3 class="font-bold text-gray-800">Verified Owners</h3>
+          <p class="text-gray-600">
+            Trust and safety with verified renter profiles.
+          </p>
         </div>
-        <div class="flex space-x-2">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Min Price</label>
-            <input id="minPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱0">
+        <div>
+          <svg
+            class="mx-auto h-12 w-12 text-amber-500 mb-2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 17v-2a4 4 0 018 0v2M5 10V8a6 6 0 0112 0v2m4 4H5a2 2 0 00-2 2v5h18v-5a2 2 0 00-2-2z"
+            />
+          </svg>
+          <h3 class="font-bold text-gray-800">Flexible Delivery</h3>
+          <p class="text-gray-600">
+            Pickup, delivery, or courier options available.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ RENTAL LISTINGS with Search & Filters -->
+    <section id="listings" class="bg-gray-50 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-amber-500 mb-6 text-center">Available for Rent</h2>
+
+        <div class="bg-white rounded-lg shadow p-0 overflow-hidden max-h-[80vh] flex flex-col">
+          <!-- ✅ Filters (Sticky) -->
+          <div class="bg-white p-4 border-b sticky top-0 z-10 space-y-4 md:space-y-0 md:flex md:items-end md:space-x-4">
+            <div class="flex-1">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+              <input id="searchInput" type="text" placeholder="Search by item, owner, or tags" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+              <select id="categorySelect" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
+                <option value="">All Categories</option>
+                <option value="Car">Car</option>
+                <option value="Camera">Camera</option>
+                <option value="Equipment">Equipment</option>
+                <option value="Tools">Tools</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="flex space-x-2">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Min Price</label>
+                <input id="minPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱0">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
+                <input id="maxPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱10,000">
+              </div>
+            </div>
+            <button id="applyFilters" class="mt-2 md:mt-0 px-4 py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition">Apply Filters</button>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
-            <input id="maxPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱10,000">
+
+          <!-- ✅ Items Grid (Scrollable) -->
+          <div id="itemsGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-4 overflow-y-auto p-4 flex-1">
+            <!-- Items will render here -->
           </div>
         </div>
-        <button id="applyFilters" class="mt-2 md:mt-0 px-4 py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition">Apply Filters</button>
       </div>
+    </section>
 
-      <!-- ✅ Items Grid (Scrollable) -->
-      <div id="itemsGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-4 overflow-y-auto p-4 flex-1">
-        <!-- Items will render here -->
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ✅ Carousel JS -->
+    <script>
+      const carousel = document.getElementById("carousel");
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % 3;
+        carousel.style.transform = "translateX(-" + index * 100 + "%)";
+      }, 4000);
+    </script>
 
+    <!-- ✅ User Dropdown JS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const userMenuButton = document.getElementById('userMenuButton');
+        const userDropdown = document.getElementById('userDropdown');
 
-  <!-- ✅ Carousel JS -->
-  <script>
-    const carousel = document.getElementById("carousel");
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 3;
-      carousel.style.transform = "translateX(-" + index * 100 + "%)";
-    }, 4000);
-  </script>
+        // Toggle dropdown
+        userMenuButton.addEventListener('click', () => {
+          userDropdown.classList.toggle('hidden');
+        });
 
-  <!-- ✅ Listings Data + Filter JS -->
-  <script>
-    const items = [
-      { name: 'Toyota Hilux Pickup', owner: 'John D.', category: 'Car', price: 2500, img: 'https://source.unsplash.com/400x250/?car', tags: ['pickup', 'truck', 'vehicle'] },
-      { name: 'Canon EOS DSLR', owner: 'Maria L.', category: 'Camera', price: 1200, img: 'https://source.unsplash.com/400x250/?camera', tags: ['camera', 'equipment'] },
-      { name: 'Bosch Power Drill', owner: 'Kevin S.', category: 'Tools', price: 400, img: 'https://source.unsplash.com/400x250/?drill', tags: ['drill', 'tools', 'equipment'] },
-      { name: 'Isuzu Elf Truck', owner: 'Carla M.', category: 'Car', price: 3000, img: 'https://source.unsplash.com/400x250/?truck', tags: ['truck', 'delivery', 'vehicle'] },
-      { name: 'CAT Backhoe Loader', owner: 'Miguel S.', category: 'Equipment', price: 10500, img: 'https://source.unsplash.com/400x250/?backhoe', tags: ['backhoe', 'heavy', 'equipment'] },
-      { name: 'Sigma Art Lens', owner: 'Anna P.', category: 'Camera', price: 800, img: 'https://source.unsplash.com/400x250/?camera,lens', tags: ['lens', 'camera', 'equipment'] },
-      { name: 'Giant MTB Bike', owner: 'Leo K.', category: 'Other', price: 600, img: 'https://source.unsplash.com/400x250/?bike', tags: ['bike', 'mtb', 'sports'] },
-      { name: 'Honda Generator', owner: 'Vince T.', category: 'Equipment', price: 1800, img: 'https://source.unsplash.com/400x250/?generator', tags: ['generator', 'power', 'equipment'] },
-      { name: 'DJI Drone', owner: 'Chloe R.', category: 'Camera', price: 2200, img: 'https://source.unsplash.com/400x250/?drone', tags: ['drone', 'camera', 'aerial'] },
-      { name: 'Yamaha Motorbike', owner: 'Jorge L.', category: 'Other', price: 2500, img: 'https://source.unsplash.com/400x250/?motorbike', tags: ['motorbike', 'vehicle'] },
-      { name: 'Sony Handycam', owner: 'Rina A.', category: 'Camera', price: 1000, img: 'https://source.unsplash.com/400x250/?handycam', tags: ['video', 'camera', 'recording'] },
-      { name: 'Power Washer', owner: 'Mike B.', category: 'Tools', price: 700, img: 'https://source.unsplash.com/400x250/?washer', tags: ['cleaning', 'tools'] },
-      { name: 'Nikon Z7 Mirrorless', owner: 'Lara C.', category: 'Camera', price: 1500, img: 'https://source.unsplash.com/400x250/?mirrorless', tags: ['camera', 'mirrorless', 'equipment'] },
-      { name: 'Ford Ranger', owner: 'Alex S.', category: 'Car', price: 2800, img: 'https://source.unsplash.com/400x250/?pickup,truck', tags: ['pickup', 'truck', 'vehicle'] },
-      { name: 'Makita Circular Saw', owner: 'Neil J.', category: 'Tools', price: 500, img: 'https://source.unsplash.com/400x250/?saw', tags: ['saw', 'cutting', 'tools'] },
-      { name: 'LED Light Kit', owner: 'Paula M.', category: 'Equipment', price: 300, img: 'https://source.unsplash.com/400x250/?lighting', tags: ['lighting', 'studio', 'equipment'] },
-      { name: 'Samsung Gear 360', owner: 'Ken V.', category: 'Camera', price: 900, img: 'https://source.unsplash.com/400x250/?360camera', tags: ['camera', '360', 'equipment'] },
-      { name: 'Hyundai Starex Van', owner: 'Grace T.', category: 'Car', price: 3200, img: 'https://source.unsplash.com/400x250/?van', tags: ['van', 'vehicle', 'transport'] },
-      { name: 'Concrete Mixer', owner: 'Diego F.', category: 'Equipment', price: 4200, img: 'https://source.unsplash.com/400x250/?mixer', tags: ['mixer', 'construction', 'equipment'] },
-      { name: 'Electric Chainsaw', owner: 'Sarah P.', category: 'Tools', price: 650, img: 'https://source.unsplash.com/400x250/?chainsaw', tags: ['chainsaw', 'cutting', 'tools'] },
-    ];
-
-    const grid = document.getElementById('itemsGrid');
-    const searchInput = document.getElementById('searchInput');
-    const categorySelect = document.getElementById('categorySelect');
-    const minPriceInput = document.getElementById('minPrice');
-    const maxPriceInput = document.getElementById('maxPrice');
-    const applyBtn = document.getElementById('applyFilters');
-
-    function renderItems(filteredItems) {
-      grid.innerHTML = '';
-      filteredItems.forEach(item => {
-        grid.innerHTML += `
-          <div class="bg-white rounded-lg shadow p-4 flex flex-col cursor-pointer hover:shadow-lg transition" onclick="window.location.href='details.html'">
-            <img src="${item.img}" alt="${item.name}" class="rounded-md mb-3 object-cover h-40 w-full" />
-            <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
-            <p class="text-gray-600">By ${item.owner}</p>
-            <p class="text-sm text-gray-500">Tags: ${item.tags.join(', ')}</p>
-            <p class="text-amber-500 font-semibold mb-2">₱${item.price.toLocaleString()}/day</p>
-            <button class="mt-auto w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition">Add to Cart</button>
-          </div>`;
+        // Click outside to close
+        document.addEventListener('click', (e) => {
+          if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
+            userDropdown.classList.add('hidden');
+          }
+        });
       });
-    }
+    </script>
 
-    function applyFilters() {
-      const search = searchInput.value.trim().toLowerCase();
-      const category = categorySelect.value;
-      const minPrice = parseInt(minPriceInput.value) || 0;
-      const maxPrice = parseInt(maxPriceInput.value) || Infinity;
+    <!-- ✅ Listings Data + Filter JS + Add to Cart -->
+    <script>
+      // Add to Cart functionality
+      let cartItems = new Set(); // Track items in cart
 
-      const filtered = items.filter(item => {
-        const matchesSearch = item.name.toLowerCase().includes(search)
-          || item.owner.toLowerCase().includes(search)
-          || item.tags.some(tag => tag.includes(search));
-        const matchesCategory = category === '' || item.category === category;
-        const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
-        return matchesSearch && matchesCategory && matchesPrice;
-      });
+      function addToCart(itemId, index, event) {
+        // Prevent event bubbling to parent div
+        event.stopPropagation();
+        
+        if (cartItems.has(itemId)) {
+          return; // Already in cart, do nothing
+        }
 
-      renderItems(filtered);
-    }
+        // Add item to cart
+        cartItems.add(itemId);
+        
+        // Update button state
+        const addToCartBtn = document.getElementById(`addToCartBtn-${index}`);
+        if (addToCartBtn) {
+          addToCartBtn.innerHTML = `
+            <svg class="w-4 h-4 mr-1 inline" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            Already in Cart
+          `;
+          addToCartBtn.className = 'mt-auto w-full py-2 rounded-md bg-gray-400 text-white font-semibold cursor-not-allowed transition';
+          addToCartBtn.disabled = true;
+          addToCartBtn.onclick = null; // Remove click handler
+        }
 
-    renderItems(items);
-    applyBtn.addEventListener('click', applyFilters);
-  </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const userMenuButton = document.getElementById('userMenuButton');
-    const userDropdown = document.getElementById('userDropdown');
-
-    // Toggle dropdown
-    userMenuButton.addEventListener('click', () => {
-      userDropdown.classList.toggle('hidden');
-    });
-
-    // Example logout button
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      alert('Logging out...');
-      // Replace with real logout logic
-      window.location.href = 'login.html';
-    });
-
-    // Click outside to close
-    document.addEventListener('click', (e) => {
-      if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
-        userDropdown.classList.add('hidden');
+        // Show success notification
+        showCartNotification('Added to Cart!', 'success');
       }
-    });
-  });
-</script>
 
+      function showCartNotification(message, type) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `fixed top-4 right-4 px-6 py-4 rounded-md text-white font-medium z-50 transition-all duration-300 transform translate-x-full ${
+          type === 'success' ? 'bg-amber-500' : 'bg-red-500'
+        } shadow-lg`;
+        
+        // Add cart icon and message
+        notification.innerHTML = `
+          <div class="flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+            <span>${message}</span>
+          </div>
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Slide in animation
+        setTimeout(() => {
+          notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove after 3 seconds with slide out animation
+        setTimeout(() => {
+          notification.style.transform = 'translateX(100%)';
+          setTimeout(() => {
+            if (document.body.contains(notification)) {
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      }
 
-</body>
+      const items = [
+        { name: 'Toyota Hilux Pickup', owner: 'John D.', category: 'Car', price: 2500, img: 'https://source.unsplash.com/400x250/?car', tags: ['pickup', 'truck', 'vehicle'] },
+        { name: 'Canon EOS DSLR', owner: 'Maria L.', category: 'Camera', price: 1200, img: 'https://source.unsplash.com/400x250/?camera', tags: ['camera', 'equipment'] },
+        { name: 'Bosch Power Drill', owner: 'Kevin S.', category: 'Tools', price: 400, img: 'https://source.unsplash.com/400x250/?drill', tags: ['drill', 'tools', 'equipment'] },
+        { name: 'Isuzu Elf Truck', owner: 'Carla M.', category: 'Car', price: 3000, img: 'https://source.unsplash.com/400x250/?truck', tags: ['truck', 'delivery', 'vehicle'] },
+        { name: 'CAT Backhoe Loader', owner: 'Miguel S.', category: 'Equipment', price: 10500, img: 'https://source.unsplash.com/400x250/?backhoe', tags: ['backhoe', 'heavy', 'equipment'] },
+        { name: 'Sigma Art Lens', owner: 'Anna P.', category: 'Camera', price: 800, img: 'https://source.unsplash.com/400x250/?camera,lens', tags: ['lens', 'camera', 'equipment'] },
+        { name: 'Giant MTB Bike', owner: 'Leo K.', category: 'Other', price: 600, img: 'https://source.unsplash.com/400x250/?bike', tags: ['bike', 'mtb', 'sports'] },
+        { name: 'Honda Generator', owner: 'Vince T.', category: 'Equipment', price: 1800, img: 'https://source.unsplash.com/400x250/?generator', tags: ['generator', 'power', 'equipment'] },
+        { name: 'DJI Drone', owner: 'Chloe R.', category: 'Camera', price: 2200, img: 'https://source.unsplash.com/400x250/?drone', tags: ['drone', 'camera', 'aerial'] },
+        { name: 'Yamaha Motorbike', owner: 'Jorge L.', category: 'Other', price: 2500, img: 'https://source.unsplash.com/400x250/?motorbike', tags: ['motorbike', 'vehicle'] },
+        { name: 'Sony Handycam', owner: 'Rina A.', category: 'Camera', price: 1000, img: 'https://source.unsplash.com/400x250/?handycam', tags: ['video', 'camera', 'recording'] },
+        { name: 'Power Washer', owner: 'Mike B.', category: 'Tools', price: 700, img: 'https://source.unsplash.com/400x250/?washer', tags: ['cleaning', 'tools'] },
+        { name: 'Nikon Z7 Mirrorless', owner: 'Lara C.', category: 'Camera', price: 1500, img: 'https://source.unsplash.com/400x250/?mirrorless', tags: ['camera', 'mirrorless', 'equipment'] },
+        { name: 'Ford Ranger', owner: 'Alex S.', category: 'Car', price: 2800, img: 'https://source.unsplash.com/400x250/?pickup,truck', tags: ['pickup', 'truck', 'vehicle'] },
+        { name: 'Makita Circular Saw', owner: 'Neil J.', category: 'Tools', price: 500, img: 'https://source.unsplash.com/400x250/?saw', tags: ['saw', 'cutting', 'tools'] },
+        { name: 'LED Light Kit', owner: 'Paula M.', category: 'Equipment', price: 300, img: 'https://source.unsplash.com/400x250/?lighting', tags: ['lighting', 'studio', 'equipment'] },
+        { name: 'Samsung Gear 360', owner: 'Ken V.', category: 'Camera', price: 900, img: 'https://source.unsplash.com/400x250/?360camera', tags: ['camera', '360', 'equipment'] },
+        { name: 'Hyundai Starex Van', owner: 'Grace T.', category: 'Car', price: 3200, img: 'https://source.unsplash.com/400x250/?van', tags: ['van', 'vehicle', 'transport'] },
+        { name: 'Concrete Mixer', owner: 'Diego F.', category: 'Equipment', price: 4200, img: 'https://source.unsplash.com/400x250/?mixer', tags: ['mixer', 'construction', 'equipment'] },
+        { name: 'Electric Chainsaw', owner: 'Sarah P.', category: 'Tools', price: 650, img: 'https://source.unsplash.com/400x250/?chainsaw', tags: ['chainsaw', 'cutting', 'tools'] },
+      ];
+
+      const grid = document.getElementById('itemsGrid');
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const minPriceInput = document.getElementById('minPrice');
+      const maxPriceInput = document.getElementById('maxPrice');
+      const applyBtn = document.getElementById('applyFilters');
+
+      function renderItems(filteredItems) {
+        grid.innerHTML = '';
+        filteredItems.forEach((item, index) => {
+          const itemId = item.name.toLowerCase().replace(/\s+/g, '-') + '-' + index;
+          grid.innerHTML += `
+            <div class="bg-white rounded-lg shadow p-4 flex flex-col hover:shadow-lg transition">
+              <!-- Clickable image/content area -->
+              <div class="cursor-pointer" onclick="window.location.href='details.html'">
+                <img src="${item.img}" alt="${item.name}" class="rounded-md mb-3 object-cover h-40 w-full" />
+                <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
+                <p class="text-gray-600">By ${item.owner}</p>
+                <p class="text-sm text-gray-500">Tags: ${item.tags.join(', ')}</p>
+                <p class="text-amber-500 font-semibold mb-2">₱${item.price.toLocaleString()}/day</p>
+              </div>
+              <!-- Action buttons -->
+              <div class="mt-auto flex flex-col gap-2">
+                <button 
+                  id="addToCartBtn-${index}"
+                  onclick="addToCart('${itemId}', ${index}, event)"
+                  class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition"
+                >
+                  Add to Cart
+                </button>
+                <button 
+                  onclick="window.location.href='checkout.html'"
+                  class="w-full py-2 rounded-md bg-black text-white font-semibold hover:bg-gray-800 transition"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>`;
+        });
+      }
+
+      function applyFilters() {
+        const search = searchInput.value.trim().toLowerCase();
+        const category = categorySelect.value;
+        const minPrice = parseInt(minPriceInput.value) || 0;
+        const maxPrice = parseInt(maxPriceInput.value) || Infinity;
+
+        const filtered = items.filter(item => {
+          const matchesSearch = item.name.toLowerCase().includes(search)
+            || item.owner.toLowerCase().includes(search)
+            || item.tags.some(tag => tag.includes(search));
+          const matchesCategory = category === '' || item.category === category;
+          const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+          return matchesSearch && matchesCategory && matchesPrice;
+        });
+
+        renderItems(filtered);
+      }
+
+      renderItems(items);
+      applyBtn.addEventListener('click', applyFilters);
+    </script>
+
+  </body>
 </html>
