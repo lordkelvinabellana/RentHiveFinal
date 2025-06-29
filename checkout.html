@@ -217,6 +217,7 @@
               </p>
               <button
                 id="confirmBtn"
+                onclick="confirmRental()"
                 class="w-full py-3 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors"
               >
                 Confirm and Rent Now
@@ -226,7 +227,49 @@
         </div>
       </div>
     </main>
+ <!-- Success Modal -->
+    <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+      <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+        <!-- Success Icon -->
+        <div class="mb-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Success Message -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Rental Confirmed!</h3>
+        
+        <div class="space-y-3 text-gray-600">
+          <p class="text-lg">🎉 Your rental request has been successfully submitted!</p>
+          
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">
+            <p class="font-semibold text-amber-800 mb-2">📧 What happens next?</p>
+            <ul class="text-left space-y-1 text-amber-700">
+              <li>• Equipment owner will review your request</li>
+              <li>• You'll receive an email confirmation within 24 hours</li>
+              <li>• Payment instructions will be included</li>
+              <li>• Pickup/delivery details will be provided</li>
+            </ul>
+          </div>
+          
+          <p class="text-sm text-gray-500 mt-4">
+            <strong>Rental ID:</strong> <span class="font-mono text-amber-600">#RH2025-0001</span>
+          </p>
+          
+          <p class="text-sm text-gray-500">
+            Check your email for detailed confirmation and next steps.
+          </p>
+        </div>
 
+       <!-- Loading indicator -->
+        <div class="mt-6">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500 mx-auto"></div>
+          <p class="text-sm text-gray-500 mt-2">Redirecting you to login page...</p>
+        </div>
+      </div>
     <!-- ✅ JavaScript for Calculation -->
     <script>
       const startDateInput = document.getElementById("startDate");
@@ -267,6 +310,61 @@
       rentModeInputs.forEach((input) =>
         input.addEventListener("change", calculateCost)
       );
+      
+      function confirmRental() {
+        // Validate that dates are selected
+        if (!startDateInput.value || !endDateInput.value) {
+          alert('Please select both start and end dates.');
+          return;
+        }
+
+        const start = new Date(startDateInput.value);
+        const end = new Date(endDateInput.value);
+        
+        if (end <= start) {
+          alert('End date must be after start date.');
+          return;
+        }
+
+        // Show success modal
+        document.getElementById('successModal').classList.remove('hidden');
+        
+        // Disable the confirm button to prevent double-clicking
+        const confirmBtn = document.getElementById('confirmBtn');
+        confirmBtn.disabled = true;
+        confirmBtn.className = 'w-full py-3 rounded-md bg-gray-400 text-white font-semibold cursor-not-allowed transition-colors';
+        confirmBtn.textContent = 'Processing...';
+
+        // Redirect to homepage.html after 5 seconds
+        setTimeout(() => {
+          window.location.href = 'homepage.html';
+        }, 5000);
+      }
+
+      // Close modal when clicking outside (optional)
+      document.getElementById('successModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          // Allow manual close, but still redirect
+          window.location.href = 'homepage.html';
+        }
+      });
+
+      startDateInput.addEventListener("change", calculateCost);
+      endDateInput.addEventListener("change", calculateCost);
+      rentModeInputs.forEach((input) =>
+        input.addEventListener("change", calculateCost)
+      );
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      startDateInput.setAttribute('min', today);
+      endDateInput.setAttribute('min', today);
+
+      // Update end date minimum when start date changes
+      startDateInput.addEventListener('change', function() {
+        endDateInput.setAttribute('min', this.value);
+      });
+
     </script>
   </body>
 </html>
