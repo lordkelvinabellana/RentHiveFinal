@@ -23,13 +23,18 @@
       <div
         class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
       >
-        <div class="flex items-center space-x-2">
+        <div
+          class="flex items-center space-x-2"
+          onclick="window.location.href='homepage.html'"
+        >
           <img src="logo.png" alt="RentHIVE" class="h-10" />
           <span class="text-2xl font-bold text-white">RentHIVE</span>
         </div>
         <nav class="hidden md:flex space-x-6">
           <a href="homepage.html" class="text-white hover:underline">Home</a>
-          <a href="renter_dashboard.html" class="text-white hover:underline">Dashboard</a>
+          <a href="renter_dashboard.html" class="text-white hover:underline"
+            >Dashboard</a
+          >
           <a href="#" class="text-white hover:underline">About</a>
           <a href="#" class="text-white hover:underline">Contact</a>
         </nav>
@@ -65,7 +70,10 @@
         <form action="renter_dashboard.html" method="GET" class="space-y-6">
           <!-- Product Name -->
           <div>
-            <label for="productName" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="productName"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Product Name
             </label>
             <input
@@ -80,7 +88,10 @@
 
           <!-- Daily Rate -->
           <div>
-            <label for="dailyRate" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="dailyRate"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Daily Rate (₱)
             </label>
             <input
@@ -96,7 +107,10 @@
 
           <!-- Product Image -->
           <div>
-            <label for="productImage" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="productImage"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Product Image
             </label>
             <input
@@ -114,7 +128,10 @@
 
           <!-- Condition -->
           <div>
-            <label for="condition" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="condition"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Condition
             </label>
             <textarea
@@ -129,7 +146,10 @@
 
           <!-- Availability -->
           <div>
-            <label for="availability" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="availability"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Availability
             </label>
             <textarea
@@ -144,7 +164,10 @@
 
           <!-- Short Description -->
           <div>
-            <label for="description" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="description"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Short Description
             </label>
             <textarea
@@ -159,7 +182,10 @@
 
           <!-- Specifications -->
           <div>
-            <label for="specifications" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="specifications"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Specifications
             </label>
             <textarea
@@ -181,7 +207,10 @@ Loader Capacity: 1.3 cubic yards
 
           <!-- Expected Defects / Issues -->
           <div>
-            <label for="defects" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="defects"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Expected Defects / Issues
             </label>
             <textarea
@@ -198,7 +227,10 @@ Loader Capacity: 1.3 cubic yards
 
           <!-- Owner Conditions -->
           <div>
-            <label for="ownerConditions" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="ownerConditions"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Owner Conditions
             </label>
             <textarea
@@ -213,7 +245,10 @@ Loader Capacity: 1.3 cubic yards
 
           <!-- Category -->
           <div>
-            <label for="category" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="category"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Category
             </label>
             <select
@@ -235,7 +270,10 @@ Loader Capacity: 1.3 cubic yards
 
           <!-- Advance Booking Required -->
           <div>
-            <label for="advanceBooking" class="block text-lg font-semibold text-gray-800 mb-2">
+            <label
+              for="advanceBooking"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
               Advance Booking Required (Days)
             </label>
             <input
@@ -248,7 +286,8 @@ Loader Capacity: 1.3 cubic yards
               class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3"
             />
             <p class="text-xs text-gray-500 mt-1">
-              How many days in advance should customers book? (0 = same day booking allowed)
+              How many days in advance should customers book? (0 = same day
+              booking allowed)
             </p>
           </div>
 
@@ -274,11 +313,18 @@ Loader Capacity: 1.3 cubic yards
     </main>
 
     <!-- Success Message (Hidden by default) -->
-    <div id="successMessage" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div
+      id="successMessage"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
       <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
         <div class="text-green-500 text-6xl mb-4">✓</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Product Added Successfully!</h3>
-        <p class="text-gray-600 mb-4">Your product has been added to your rental listings.</p>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">
+          Product Added Successfully!
+        </h3>
+        <p class="text-gray-600 mb-4">
+          Your product has been added to your rental listings.
+        </p>
         <button
           onclick="window.location.href='renter_dashboard.html'"
           class="bg-amber-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-amber-600 transition-colors"
@@ -291,11 +337,11 @@ Loader Capacity: 1.3 cubic yards
     <script>
       function showSuccessMessage() {
         event.preventDefault();
-        document.getElementById('successMessage').classList.remove('hidden');
-        
+        document.getElementById("successMessage").classList.remove("hidden");
+
         // Auto redirect after 3 seconds
         setTimeout(() => {
-          window.location.href = 'renter_dashboard.html';
+          window.location.href = "renter_dashboard.html";
         }, 3000);
       }
     </script>
