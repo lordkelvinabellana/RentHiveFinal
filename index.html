@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi" />
-     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png" />
 
     <script src="https://cdn.tailwindcss.com">
       tailwind.config = {
@@ -118,82 +118,91 @@
     </header>
 
     <!-- Loading Modal -->
-    <div id="loginLoadingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div
+      id="loginLoadingModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
       <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
         <div class="mb-4">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"></div>
+          <div
+            class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"
+          ></div>
         </div>
         <h3 class="text-xl font-bold text-gray-800 mb-2">Logging you in...</h3>
-        <p class="text-gray-600">Please wait while we prepare your dashboard.</p>
+        <p class="text-gray-600">
+          Please wait while we prepare your dashboard.
+        </p>
       </div>
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('loginForm');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("loginForm");
+
         if (!form) {
-          console.error('Login form not found!');
+          console.error("Login form not found!");
           return;
         }
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener("submit", function (e) {
           e.preventDefault();
-          
+
           // Get form data
-          const email = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
-          
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
           // Get selected role
-          const roleInputs = document.querySelectorAll('input[name="loginRole"]:checked');
-          
+          const roleInputs = document.querySelectorAll(
+            'input[name="loginRole"]:checked'
+          );
+
           if (roleInputs.length === 0) {
-            alert('Please select your login role');
+            alert("Please select your login role");
             return;
           }
-          
+
           const selectedRole = roleInputs[0].value;
-          console.log('Login role selected:', selectedRole);
-          
+          console.log("Login role selected:", selectedRole);
+
           // Basic validation
           if (!email || !password) {
-            alert('Please fill in all fields');
+            alert("Please fill in all fields");
             return;
           }
-          
+
           // Show loading modal
-          const loadingModal = document.getElementById('loginLoadingModal');
+          const loadingModal = document.getElementById("loginLoadingModal");
           if (loadingModal) {
-            loadingModal.classList.remove('hidden');
+            loadingModal.classList.remove("hidden");
           }
-          
+
           // Simulate login process
           setTimeout(() => {
             // Hide loading modal
             if (loadingModal) {
-              loadingModal.classList.add('hidden');
+              loadingModal.classList.add("hidden");
             }
-            
+
             // Redirect based on role
-            if (selectedRole === 'leaser' || selectedRole === 'both') {
-              window.location.href = 'renter_dashboard.html';
+            if (selectedRole === "leaser" || selectedRole === "both") {
+              window.location.href = "renter_dashboard.html";
             } else {
-              console.log('Redirecting to homepage');
-              window.location.href = 'homepage.html';
+              console.log("Redirecting to homepage");
+              window.location.href = "homepage.html";
             }
           }, 1500); // 1.5 second delay for loading effect
         });
 
         // Role selection feedback
         const roleInputs = document.querySelectorAll('input[name="loginRole"]');
-        roleInputs.forEach(input => {
-          input.addEventListener('change', function() {
-            console.log('Login role changed to:', this.value);
-            
+        roleInputs.forEach((input) => {
+          input.addEventListener("change", function () {
+            console.log("Login role changed to:", this.value);
+
             // Remove existing role info
-            const roleInfo = document.getElementById('loginRoleInfo');
+            const roleInfo = document.getElementById("loginRoleInfo");
             if (roleInfo) roleInfo.remove();
-            
+
             // let infoText = '';
             // switch(this.value) {
             //   case 'lessee':
@@ -206,26 +215,27 @@
             //     infoText = 'Access the owner dashboard with full functionality.';
             //     break;
             // }
-            
-            const infoDiv = document.createElement('div');
-            infoDiv.id = 'loginRoleInfo';
-            infoDiv.className = 'mt-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800';
+
+            const infoDiv = document.createElement("div");
+            infoDiv.id = "loginRoleInfo";
+            infoDiv.className =
+              "mt-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800";
             infoDiv.textContent = infoText;
-            
-            this.closest('fieldset').appendChild(infoDiv);
+
+            this.closest("fieldset").appendChild(infoDiv);
           });
         });
 
         // Form field validation feedback
-        const inputs = form.querySelectorAll('input[required]');
-        inputs.forEach(input => {
-          input.addEventListener('blur', function() {
-            if (this.value.trim() === '') {
-              this.classList.add('border-red-500');
-              this.classList.remove('border-gray-300');
+        const inputs = form.querySelectorAll("input[required]");
+        inputs.forEach((input) => {
+          input.addEventListener("blur", function () {
+            if (this.value.trim() === "") {
+              this.classList.add("border-red-500");
+              this.classList.remove("border-gray-300");
             } else {
-              this.classList.remove('border-red-500');
-              this.classList.add('border-gray-300');
+              this.classList.remove("border-red-500");
+              this.classList.add("border-gray-300");
             }
           });
         });
