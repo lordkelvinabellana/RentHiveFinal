@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com">
       tailwind.config = {
         theme: {
@@ -32,7 +33,7 @@
           <span class="text-2xl font-bold text-white">RentHive</span>
         </div>
         <nav class="hidden md:flex space-x-6">
-          <a href="#" class="text-white hover:underline">Home</a>
+          <a href="homepage.html" class="text-white hover:underline">Home</a>
           <a href="#" class="text-white hover:underline">Categories</a>
           <a href="#" class="text-white hover:underline">About</a>
           <a href="#" class="text-white hover:underline">Contact</a>
@@ -73,149 +74,296 @@
     </header>
 
     <!--  Main Content -->
-    <main class="max-w-4xl mx-auto mt-12 px-4 space-y-8">
-      <!--  Product Details Card -->
-      <div class="bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
-        <!-- Close Button -->
-        <div class="flex justify-end">
-          <button
-            onclick="window.location.href='homepage.html'"
-            class="text-gray-500 hover:text-amber-500 transition font-medium"
-            aria-label="Close Details"
-          >
-            ✕
-          </button>
-        </div>
-
-        <!-- Header -->
-        <div
-          class="flex flex-col md:flex-row md:items-center md:justify-between"
-        >
-          <h1 class="text-3xl font-bold text-amber-500">
-            CAT 420F2 Backhoe Loader
-          </h1>
-          <p class="text-lg text-gray-700 mt-2 md:mt-0">₱10,500 / day</p>
-        </div>
-
-        <!-- Image and Details -->
-        <div class="grid gap-6 md:grid-cols-2">
-          <!-- Image -->
-          <img
-            src="https://image.made-in-china.com/202f0j00HujoOGvzJact/Good-Condition-4-4-Used-Caterpillar-420f2-Backhoe-Loader.webp"
-            alt="Backhoe Image"
-            class="rounded-lg shadow object-cover w-full h-64"
-          />
-
-          <!-- Details -->
-          <div class="space-y-4">
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">Condition</h2>
-              <p class="text-gray-700">
-                Good Condition — Fully operational with regular maintenance.
-              </p>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">Availability</h2>
-              <p class="text-gray-700">
-                Available with 2-day advance booking. Reserve your schedule now.
-              </p>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">
-                Short Description
-              </h2>
-              <p class="text-gray-700">
-                Powerful backhoe loader for construction, excavation, and
-                landscaping projects. Reliable CAT performance with easy
-                controls.
-              </p>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">
-                Specifications
-              </h2>
-              <ul class="list-disc list-inside text-gray-700">
-                <li>Engine Power: 93 HP</li>
-                <li>Max Dig Depth: 14 feet</li>
-                <li>Loader Capacity: 1.3 cubic yards</li>
-                <li>4WD for rough terrain</li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">
-                Expected Defects / Issues
-              </h2>
-              <p class="text-gray-700">
-                Minor hydraulic seepage. Some cosmetic paint wear typical of
-                rental units.
-              </p>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold text-gray-800">
-                Owner Conditions
-              </h2>
-              <p class="text-gray-700">
-                Fuel must be refilled before return. Cleaning fee applies if
-                returned dirty. Rental agreement must be signed.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col md:flex-row gap-4 mt-8">
-          <button
-            class="flex-1 py-3 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors"
-          >
-            Add to Cart
-          </button>
-          <button
-            class="flex-1 py-3 rounded-md bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
-            onclick="window.location.href='checkout.html'"
-          >
-            Rent Now
-          </button>
-        </div>
-      </div>
-
-      <!-- Owner Info Card -->
-      <div
-        class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0"
-      >
-        <!-- Owner Info -->
-        <div class="flex items-center space-x-4">
-          <img
-            src="https://randomuser.me/api/portraits/men/75.jpg"
-            alt="Owner Profile"
-            class="h-16 w-16 rounded-full object-cover border-2 border-amber-500"
-          />
-          <div>
-            <div class="flex items-center space-x-2">
-              <h3 class="text-lg font-bold text-gray-800">Miguel Santos</h3>
-              <span
-                class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-500 text-white"
-                >Verified</span
+    <main class="max-w-7xl mx-auto mt-8 px-4">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Left Column (Product Details) - 2/3 width -->
+        <div class="lg:col-span-2 space-y-8">
+          <!--  Product Details Card -->
+          <div class="bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
+            <!-- Close Button -->
+            <div class="flex justify-end">
+              <button
+                onclick="window.location.href='homepage.html'"
+                class="text-gray-500 hover:text-amber-500 transition font-medium"
+                aria-label="Close Details"
               >
+                ✕
+              </button>
             </div>
-            <div class="flex items-center text-yellow-400">
-              ★★★★☆
-              <span class="text-gray-600 text-sm ml-2">(4.8/5)</span>
+
+            <!-- Header -->
+            <div class="border-b border-gray-200 pb-6">
+              <h1 class="text-4xl font-bold text-amber-500 mb-3">
+                CAT 420F2 Backhoe Loader
+              </h1>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    Available
+                  </span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Verified Equipment
+                  </span>
+                </div>
+                <div class="text-right">
+                  <p class="text-3xl font-bold text-amber-500">₱10,500</p>
+                  <p class="text-lg text-gray-600">per day</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-8">
+              <img
+                src="https://image.made-in-china.com/202f0j00HujoOGvzJact/Good-Condition-4-4-Used-Caterpillar-420f2-Backhoe-Loader.webp"
+                alt="Backhoe Image"
+                class="rounded-lg shadow-lg object-cover w-full h-96"
+              />
+            </div>
+
+            <!-- Product Details Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Left Details -->
+              <div class="space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Condition
+                  </h2>
+                  <p class="text-gray-700 font-medium">
+                    <span class="text-green-600 font-bold">Good Condition</span> — Fully operational with regular maintenance.
+                  </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Availability
+                  </h2>
+                  <p class="text-gray-700">
+                    Available with <span class="font-bold text-amber-600">2-day advance booking</span>. Reserve your schedule now.
+                  </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Description
+                  </h2>
+                  <p class="text-gray-700">
+                    Powerful backhoe loader for <span class="font-semibold">construction, excavation, and landscaping projects</span>. 
+                    Reliable CAT performance with easy controls.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Details -->
+              <div class="space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    Specifications
+                  </h2>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex justify-between">
+                      <span>Engine Power:</span>
+                      <span class="font-bold text-amber-600">93 HP</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Max Dig Depth:</span>
+                      <span class="font-bold text-amber-600">14 feet</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Loader Capacity:</span>
+                      <span class="font-bold text-amber-600">1.3 cubic yards</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Drive Type:</span>
+                      <span class="font-bold text-amber-600">4WD</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-red-50 rounded-lg p-6 border-l-4 border-red-400">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
+                    Known Issues
+                  </h2>
+                  <p class="text-gray-700">
+                    <span class="font-semibold text-red-600">Minor hydraulic seepage</span>. Some cosmetic paint wear typical of rental units.
+                  </p>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-400">
+                  <h2 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Rental Conditions
+                  </h2>
+                  <ul class="space-y-1 text-gray-700 text-sm">
+                    <li>• <span class="font-semibold">Fuel must be refilled</span> before return</li>
+                    <li>• <span class="font-semibold">Cleaning fee applies</span> if returned dirty</li>
+                    <li>• <span class="font-semibold">Rental agreement</span> must be signed</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col md:flex-row gap-4 mt-8 pt-6 border-t border-gray-200">
+              <button
+                class="flex-1 py-4 rounded-md bg-amber-500 text-white font-bold text-lg hover:bg-amber-600 transition-colors shadow-lg"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="flex-1 py-4 rounded-md bg-black text-white font-bold text-lg hover:bg-gray-800 transition-colors shadow-lg"
+                onclick="window.location.href='checkout.html'"
+              >
+                Rent Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Owner Actions -->
-        <div class="flex space-x-4">
-          <button
-            class="px-4 py-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-50 transition"
-          >
-            Follow
-          </button>
-          <button
-            class="px-4 py-2 rounded-md bg-amber-500 text-white hover:bg-amber-600 transition"
-          >
-            View Owner Profile
-          </button>
+        <!-- Right Column (Owner Info & Actions) - 1/3 width -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-8 space-y-6">
+            <!-- Pricing Summary -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Pricing Summary</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600">Daily Rate:</span>
+                  <span class="text-2xl font-bold text-amber-500">₱10,500</span>
+                </div>
+                <div class="flex justify-between items-center text-sm text-gray-500">
+                  <span>Weekly Rate (7+ days):</span>
+                  <span class="font-semibold">₱9,500/day</span>
+                </div>
+                <div class="flex justify-between items-center text-sm text-gray-500">
+                  <span>Monthly Rate (30+ days):</span>
+                  <span class="font-semibold">₱8,500/day</span>
+                </div>
+                <hr class="my-4">
+                <div class="text-xs text-gray-500">
+                  <p>• Security deposit required</p>
+                  <p>• Delivery available (+₱2,000)</p>
+                  <p>• Insurance recommended</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Owner Info Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Equipment Owner</h3>
+              
+              <!-- Owner Profile -->
+              <div class="flex items-center space-x-4 mb-6">
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="Owner Profile"
+                  class="h-16 w-16 rounded-full object-cover border-3 border-amber-500 shadow-md"
+                />
+                <div class="flex-1">
+                  <div class="flex items-center space-x-2 mb-2">
+                    <h4 class="text-lg font-bold text-gray-800">Miguel Santos</h4>
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+                    >
+                      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      Verified
+                    </span>
+                  </div>
+                  <div class="flex items-center text-yellow-400 text-lg">
+                    ★★★★☆
+                    <span class="text-gray-600 text-sm ml-2 font-semibold">(4.8/5)</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mt-1">127 rentals completed</p>
+                </div>
+              </div>
+
+              <!-- Owner Stats -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="text-center p-3 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-amber-500">3.2</div>
+                  <div class="text-xs text-gray-600">Years Active</div>
+                </div>
+                <div class="text-center p-3 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-green-500">98%</div>
+                  <div class="text-xs text-gray-600">Response Rate</div>
+                </div>
+              </div>
+
+              <!-- Owner Actions -->
+              <div class="space-y-3">
+                <button
+                  onclick="window.location.href='profile.html'"
+                  class="w-full px-4 py-3 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition"
+                >
+                  View Owner Profile
+                </button>
+                <button
+                  class="w-full px-4 py-3 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-50 transition"
+                >
+                  Send Message
+                </button>
+                <button
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition"
+                >
+                  Follow Owner
+                </button>
+              </div>
+            </div>
+
+            <!-- Safety & Trust -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Safety & Trust</h3>
+              <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-sm text-gray-700">Identity verified</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-sm text-gray-700">Equipment inspected</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-sm text-gray-700">Secure payment</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-sm text-gray-700">24/7 support</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
