@@ -4,25 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
-
-    <script src="https://cdn.tailwindcss.com">
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>RentHIVE Profile Setup</title>
   </head>
   <body
     style="background: url('profiling_background.svg') center/cover no-repeat"
+    class="font-sans antialiased"
   >
-    <!-- Header -->
+    <!-- ✅ Header -->
     <header class="bg-amber-500 shadow">
       <div
         class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
@@ -34,136 +23,188 @@
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- ✅ Main Content -->
     <main class="max-w-2xl mx-auto mt-12 px-4">
-      <div class="bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-3xl font-bold text-amber-500 mb-2 text-center">
+      <div class="bg-white rounded-lg shadow-lg p-8 space-y-6">
+        <h2 class="text-3xl font-bold text-amber-500 text-center">
           Complete Your Profile
         </h2>
-        <p class="text-gray-600 text-center mb-6">
+        <p class="text-gray-600 text-center mb-2">
           Tell us about yourself to get started on RentHIVE.
+        </p>
+        <p
+          class="text-sm text-amber-800 bg-yellow-50 border border-yellow-200 rounded-md p-3 text-center"
+        >
+          Note: Verification may take 1–2 business days as your documents will
+          be manually reviewed.
         </p>
 
         <form id="profileForm" class="space-y-6">
-          <!-- Full Name -->
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700"
-              >Full Name</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
-              placeholder="Your full name"
-            />
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <!-- Role: Lessee or Leaser -->
-          <fieldset>
-            <legend class="block text-sm font-medium text-gray-700 mb-2">
-              Role
-            </legend>
-            <div class="flex space-x-6">
-              <label class="flex items-center">
-                <input
-                  type="radio"
-                  name="role"
-                  value="lessee"
-                  required
-                  class="text-amber-500 focus:ring-amber-400"
-                />
-                <span class="ml-2 text-gray-700">Lessee (Renter)</span>
-              </label>
-              <label class="flex items-center">
-                <input
-                  type="radio"
-                  name="role"
-                  value="leaser"
-                  required
-                  class="text-amber-500 focus:ring-amber-400"
-                />
-                <span class="ml-2 text-gray-700">Leaser (Owner)</span>
-              </label>
-              <label class="flex items-center">
-                <input
-                  type="radio"
-                  name="role"
-                  value="both"
-                  required
-                  class="text-amber-500 focus:ring-amber-400"
-                />
-                <span class="ml-2 text-gray-700">Both</span>
-              </label>
+          <!-- Personal Information -->
+          <section class="space-y-4">
+            <h3 class="text-xl font-semibold text-gray-800 border-b pb-2">
+              Personal Information
+            </h3>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700"
+                >Full Name *</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+                placeholder="Your full name"
+              />
             </div>
-          </fieldset>
 
-          <!-- Address / Location -->
-          <div>
-            <label
-              for="location"
-              class="block text-sm font-medium text-gray-700"
-              >Location / Address</label
-            >
-            <input
-              type="text"
-              id="location"
-              name="location"
-              required
-              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
-              placeholder="Your address or city"
-            />
-          </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+                placeholder="you@example.com"
+              />
+            </div>
 
-          <!-- Phone Number -->
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700"
-              >Phone Number</label
-            >
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
-              placeholder="+1 (555) 123-4567"
-            />
-          </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700"
+                >Phone Number *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+                placeholder="+63 900 000 0000"
+              />
+            </div>
 
-          <!-- Photo Upload -->
-          <div>
-            <label for="photo" class="block text-sm font-medium text-gray-700">
-              Upload Verification Photo
-            </label>
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              accept="image/*"
-              required
-              class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm file:bg-amber-500 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 hover:file:bg-amber-600 focus:border-amber-400 focus:ring-amber-400"
-            />
-            <p class="text-xs text-gray-500 mt-1">
-              Please upload a clear photo of your ID or yourself for
-              verification.
-            </p>
-          </div>
+            <div>
+              <label
+                for="location"
+                class="block text-sm font-medium text-gray-700"
+                >Address / Location *</label
+              >
+              <input
+                type="text"
+                id="location"
+                name="location"
+                required
+                class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+                placeholder="Your address or city"
+              />
+            </div>
+          </section>
+
+          <!-- Role Selection -->
+          <section class="space-y-4">
+            <h3 class="text-xl font-semibold text-gray-800 border-b pb-2">
+              Account Role
+            </h3>
+            <div>
+              <label
+                for="roleSelect"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Select Role *</label
+              >
+              <select
+                id="roleSelect"
+                name="role"
+                required
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+              >
+                <option value="">-- Choose your role --</option>
+                <option value="renter">Renter</option>
+                <option value="leaser">Leaser (Owner)</option>
+                <option value="both">Both</option>
+              </select>
+              <p id="roleInfo" class="text-sm text-gray-600 mt-2"></p>
+            </div>
+          </section>
+
+          <!-- TIN Field -->
+          <section id="tinField" class="space-y-4 hidden">
+            <h3 class="text-xl font-semibold text-gray-800 border-b pb-2">
+              Business Information
+            </h3>
+            <div>
+              <label for="tin" class="block text-sm font-medium text-gray-700"
+                >TIN Number *</label
+              >
+              <input
+                type="text"
+                id="tin"
+                name="tin"
+                class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400"
+                placeholder="For owners only"
+              />
+            </div>
+          </section>
+
+          <!-- Verification Section -->
+          <section class="space-y-4">
+            <h3 class="text-xl font-semibold text-gray-800 border-b pb-2">
+              Verification Information
+            </h3>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Government ID Type *</label
+              >
+              <select
+                required
+                class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400"
+              >
+                <option value="">-- Select ID Type --</option>
+                <option value="drivers_license">Driver's License</option>
+                <option value="passport">Passport</option>
+                <option value="philhealth">PhilHealth ID</option>
+                <option value="umid">UMID</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="photo" class="block text-sm font-medium text-gray-700"
+                >Upload Government ID Photo *</label
+              >
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                required
+                class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm file:bg-amber-500 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 hover:file:bg-amber-600 focus:border-amber-400 focus:ring-amber-400"
+              />
+              <p class="text-xs text-gray-500 mt-1">
+                Please upload a clear photo of your government ID.
+              </p>
+            </div>
+            <div>
+              <label
+                for="profilePic"
+                class="block text-sm font-medium text-gray-700"
+                >Upload Profile Photo *</label
+              >
+              <input
+                type="file"
+                id="profilePic"
+                name="profilePic"
+                accept="image/*"
+                required
+                class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm file:bg-amber-500 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 hover:file:bg-amber-600 focus:border-amber-400 focus:ring-amber-400"
+              />
+              <p class="text-xs text-gray-500 mt-1">
+                Your face must be clearly visible for verification.
+              </p>
+            </div>
+          </section>
 
           <!-- Submit Button -->
           <button
@@ -176,88 +217,78 @@
       </div>
     </main>
 
-    <!-- Success Loading Modal -->
-    <div id="loadingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <!-- ✅ Loading Modal -->
+    <div
+      id="loadingModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
       <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
         <div class="mb-4">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"></div>
+          <div
+            class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"
+          ></div>
         </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Setting up your profile...</h3>
-        <p class="text-gray-600">Please wait while we prepare your dashboard.</p>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">
+          Setting up your profile...
+        </h3>
+        <p class="text-gray-600">
+          Please wait while we prepare your dashboard.
+        </p>
       </div>
     </div>
 
+    <!-- ✅ JS Logic -->
     <script>
-      document.getElementById('profileForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Show loading modal
-        document.getElementById('loadingModal').classList.remove('hidden');
-        
-        // Get form data
-        const formData = new FormData(this);
-        const selectedRole = formData.get('role');
-        
-        // Simulate form processing delay
-        setTimeout(() => {
-          // Hide loading modal
-          document.getElementById('loadingModal').classList.add('hidden');
-          
-          // Redirect based on role
-          if (selectedRole === 'leaser' || selectedRole === 'both') {
-            // Redirect to rentee dashboard for owners
-            window.location.href = 'new_user_dashboard.html';
-          } else {
-            // Redirect to homepage for renters
-            window.location.href = 'homepage.html';
-          }
-        }, 2000); // 2 second delay to show loading
+      const roleSelect = document.getElementById("roleSelect");
+      const tinField = document.getElementById("tinField");
+      const tinInput = document.getElementById("tin");
+      const roleInfo = document.getElementById("roleInfo");
+
+      roleSelect.addEventListener("change", () => {
+        const selected = roleSelect.value;
+        if (selected === "leaser" || selected === "both") {
+          tinField.classList.remove("hidden");
+          tinInput.required = true;
+        } else {
+          tinField.classList.add("hidden");
+          tinInput.required = false;
+        }
+
+        let infoText = "";
+        switch (selected) {
+          case "renter":
+            infoText =
+              "As a Renter, you can browse and rent items from other users.";
+            break;
+          case "leaser":
+            infoText =
+              "As an Owner, you can list your items for rent and earn money.";
+            break;
+          case "both":
+            infoText =
+              "You can both rent items and list your own items for rent.";
+            break;
+          default:
+            infoText = "";
+        }
+        roleInfo.textContent = infoText;
       });
 
-      // Form validation feedback
-      const form = document.getElementById('profileForm');
-      const inputs = form.querySelectorAll('input[required]');
-      
-      inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-          if (this.value.trim() === '') {
-            this.classList.add('border-red-500');
-            this.classList.remove('border-gray-300');
-          } else {
-            this.classList.remove('border-red-500');
-            this.classList.add('border-gray-300');
-          }
+      document
+        .getElementById("profileForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("loadingModal").classList.remove("hidden");
+          const selectedRole = roleSelect.value;
+          setTimeout(() => {
+            document.getElementById("loadingModal").classList.add("hidden");
+            if (selectedRole === "leaser" || selectedRole === "both") {
+              window.location.href = "new_user_dashboard.html";
+            } else {
+              window.location.href = "homepage.html";
+            }
+          }, 2000);
         });
-      });
-
-      // Role selection feedback
-      const roleInputs = document.querySelectorAll('input[name="role"]');
-      roleInputs.forEach(input => {
-        input.addEventListener('change', function() {
-          const roleInfo = document.getElementById('roleInfo');
-          if (roleInfo) roleInfo.remove();
-          
-          let infoText = '';
-          switch(this.value) {
-            case 'lessee':
-              infoText = 'As a Renter, you can browse and rent items from other users.';
-              break;
-            case 'leaser':
-              infoText = 'As an Owner, you can list your items for rent and earn money.';
-              break;
-            case 'both':
-              infoText = 'You can both rent items and list your own items for rent.';
-              break;
-          }
-          
-          const infoDiv = document.createElement('div');
-          infoDiv.id = 'roleInfo';
-          infoDiv.className = 'mt-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800';
-          infoDiv.textContent = infoText;
-          
-          this.closest('fieldset').appendChild(infoDiv);
-        });
-      });
     </script>
   </body>
 </html>
