@@ -29,13 +29,13 @@
         </div>
         <nav class="hidden md:flex space-x-6">
           <a href="homepage.html" class="text-white hover:underline">Home</a>
-          <a href="rentee_dashboard.html" class="text-white hover:underline">Dashboard</a>
+          <a href="renter_dashboard.html" class="text-white hover:underline">Dashboard</a>
           <a href="#" class="text-white hover:underline">About</a>
           <a href="#" class="text-white hover:underline">Contact</a>
         </nav>
         <div class="flex space-x-4">
           <button
-            onclick="window.location.href='rentee_dashboard.html'"
+            onclick="window.location.href='renter_dashboard.html'"
             class="text-white hover:text-amber-100"
           >
             ← Back to Dashboard
@@ -50,7 +50,7 @@
         <!-- Close Button -->
         <div class="flex justify-end mb-4">
           <button
-            onclick="window.location.href='rentee_dashboard.html'"
+            onclick="window.location.href='renter_dashboard.html'"
             class="text-gray-500 hover:text-amber-500 transition font-medium"
             aria-label="Close"
           >
@@ -62,7 +62,7 @@
           Add New Product for Rent
         </h1>
 
-        <form action="rentee_dashboard.html" method="GET" class="space-y-6">
+        <form action="renter_dashboard.html" method="GET" class="space-y-6">
           <!-- Product Name -->
           <div>
             <label for="productName" class="block text-lg font-semibold text-gray-800 mb-2">
@@ -256,7 +256,7 @@ Loader Capacity: 1.3 cubic yards
           <div class="flex flex-col md:flex-row gap-4 mt-8">
             <button
               type="button"
-              onclick="window.location.href='rentee_dashboard.html'"
+              onclick="window.location.href='renter_dashboard.html'"
               class="flex-1 py-3 rounded-md border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-colors"
             >
               Cancel
@@ -280,7 +280,7 @@ Loader Capacity: 1.3 cubic yards
         <h3 class="text-xl font-bold text-gray-800 mb-2">Product Added Successfully!</h3>
         <p class="text-gray-600 mb-4">Your product has been added to your rental listings.</p>
         <button
-          onclick="window.location.href='rentee_dashboard.html'"
+          onclick="window.location.href='renter_dashboard.html'"
           class="bg-amber-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-amber-600 transition-colors"
         >
           Go to Dashboard
@@ -295,7 +295,7 @@ Loader Capacity: 1.3 cubic yards
         
         // Auto redirect after 3 seconds
         setTimeout(() => {
-          window.location.href = 'rentee_dashboard.html';
+          window.location.href = 'renter_dashboard.html';
         }, 3000);
       }
     </script>
