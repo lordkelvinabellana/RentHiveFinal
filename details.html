@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="icon" type="image/png" href="logo.svg" />
     <script src="https://cdn.tailwindcss.com">
       tailwind.config = {
         theme: {
@@ -28,7 +28,7 @@
           class="flex items-center space-x-2"
           onclick="window.location.href='homepage.html'"
         >
-          <img src="logo.png" alt="RentHive Logo" class="h-10" />
+          <img src="logo.svg" alt="RentHive Logo" class="h-10" />
           <span class="text-2xl font-bold text-white">RentHive</span>
         </div>
         <nav class="hidden md:flex space-x-6">
@@ -543,29 +543,30 @@
 
         // Add item to cart
         cartItems.add(itemId);
-        
+
         // Update button state
-        const addToCartBtn = document.getElementById('addToCartBtn');
+        const addToCartBtn = document.getElementById("addToCartBtn");
         addToCartBtn.innerHTML = `
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
           Already in Cart
         `;
-        addToCartBtn.className = 'flex-1 py-4 rounded-md bg-gray-400 text-white font-bold text-lg cursor-not-allowed transition-colors shadow-lg';
+        addToCartBtn.className =
+          "flex-1 py-4 rounded-md bg-gray-400 text-white font-bold text-lg cursor-not-allowed transition-colors shadow-lg";
         addToCartBtn.disabled = true;
 
         // Show success notification
-        showCartNotification('Added to Cart!', 'success');
+        showCartNotification("Added to Cart!", "success");
       }
 
       function showCartNotification(message, type) {
         // Create notification element
-        const notification = document.createElement('div');
+        const notification = document.createElement("div");
         notification.className = `fixed top-4 right-4 px-6 py-4 rounded-md text-white font-medium z-50 transition-all duration-300 transform translate-x-full ${
-          type === 'success' ? 'bg-amber-500' : 'bg-red-500'
+          type === "success" ? "bg-amber-500" : "bg-red-500"
         } shadow-lg`;
-        
+
         // Add cart icon and message
         notification.innerHTML = `
           <div class="flex items-center space-x-3">
@@ -575,18 +576,18 @@
             <span>${message}</span>
           </div>
         `;
-        
+
         // Add to page
         document.body.appendChild(notification);
-        
+
         // Slide in animation
         setTimeout(() => {
-          notification.style.transform = 'translateX(0)';
+          notification.style.transform = "translateX(0)";
         }, 100);
-        
+
         // Remove after 3 seconds with slide out animation
         setTimeout(() => {
-          notification.style.transform = 'translateX(100%)';
+          notification.style.transform = "translateX(100%)";
           setTimeout(() => {
             if (document.body.contains(notification)) {
               document.body.removeChild(notification);
@@ -595,7 +596,5 @@
         }, 3000);
       }
     </script>
-
-
   </body>
 </html>
