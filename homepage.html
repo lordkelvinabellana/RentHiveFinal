@@ -13,47 +13,82 @@
   </head>
   <body class="bg-gray-50 font-sans">
     <!-- ✅ HEADER -->
-   <header class="bg-amber-500 shadow relative">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2" onclick="window.location.href='homepage.html'">
-      <img src="logo.png" alt="RentHive" class="h-10">
-      <span class="text-2xl font-bold text-white">RentHive</span>
-    </div>
-    <!-- Nav Links -->
-    <nav class="hidden md:flex space-x-6">
-      <a href="homepage.html" class="text-white hover:underline">Home</a>
-      <a href="#" class="text-white hover:underline">Categories</a>
-      <a href="#" class="text-white hover:underline">About</a>
-      <a href="#" class="text-white hover:underline">Contact</a>
-    </nav>
-    <!-- Icons -->
-    <div class="relative flex items-center space-x-4">
-      <!-- Cart Icon -->
-      <a href="cart.html" class="text-white hover:text-amber-100 relative">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M5 21h14" />
-        </svg>
-      </a>
-      <!-- User Dropdown -->
-      <div class="relative">
-        <button id="userMenuButton" class="flex items-center space-x-2 text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-        </button>
-        <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-          <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Profile</a>
-          <a href="renter_dashboard.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Admin Dashboard</a>
+    <header class="bg-amber-500 shadow relative">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <!-- Logo -->
+        <div
+          class="flex items-center space-x-2"
+          onclick="window.location.href='homepage.html'"
+        >
+          <img src="logo.svg" alt="RentHive" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHive</span>
+        </div>
+        <!-- Nav Links -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="homepage.html" class="text-white hover:underline">Home</a>
+          <a href="#" class="text-white hover:underline">Categories</a>
+          <a href="#" class="text-white hover:underline">About</a>
+          <a href="#" class="text-white hover:underline">Contact</a>
+        </nav>
+        <!-- Icons -->
+        <div class="relative flex items-center space-x-4">
+          <!-- Cart Icon -->
+          <a href="cart.html" class="text-white hover:text-amber-100 relative">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M5 21h14"
+              />
+            </svg>
+          </a>
+          <!-- User Dropdown -->
+          <div class="relative">
+            <button
+              id="userMenuButton"
+              class="flex items-center space-x-2 text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </button>
+            <div
+              id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50"
+            >
+              <a
+                href="profile.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-amber-50"
+                >Profile</a
+              >
+              <a
+                href="renter_dashboard.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-amber-50"
+                >Admin Dashboard</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-
-
+    </header>
 
     <!-- ✅ HERO SECTION -->
     <section class="relative overflow-hidden">
@@ -158,18 +193,36 @@
     <!-- ✅ RENTAL LISTINGS with Search & Filters -->
     <section id="listings" class="bg-gray-50 py-12">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-amber-500 mb-6 text-center">Available for Rent</h2>
+        <h2 class="text-3xl font-bold text-amber-500 mb-6 text-center">
+          Available for Rent
+        </h2>
 
-        <div class="bg-white rounded-lg shadow p-0 overflow-hidden max-h-[80vh] flex flex-col">
+        <div
+          class="bg-white rounded-lg shadow p-0 overflow-hidden max-h-[80vh] flex flex-col"
+        >
           <!-- ✅ Filters (Sticky) -->
-          <div class="bg-white p-4 border-b sticky top-0 z-10 space-y-4 md:space-y-0 md:flex md:items-end md:space-x-4">
+          <div
+            class="bg-white p-4 border-b sticky top-0 z-10 space-y-4 md:space-y-0 md:flex md:items-end md:space-x-4"
+          >
             <div class="flex-1">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
-              <input id="searchInput" type="text" placeholder="Search by item, owner, or tags" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Search</label
+              >
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search by item, owner, or tags"
+                class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400"
+              />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-              <select id="categorySelect" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Category</label
+              >
+              <select
+                id="categorySelect"
+                class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400"
+              >
                 <option value="">All Categories</option>
                 <option value="Car">Car</option>
                 <option value="Camera">Camera</option>
@@ -180,19 +233,41 @@
             </div>
             <div class="flex space-x-2">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Min Price</label>
-                <input id="minPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱0">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Min Price</label
+                >
+                <input
+                  id="minPrice"
+                  type="number"
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400"
+                  placeholder="₱0"
+                />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
-                <input id="maxPrice" type="number" class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400" placeholder="₱10,000">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Max Price</label
+                >
+                <input
+                  id="maxPrice"
+                  type="number"
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:ring-amber-400 focus:border-amber-400"
+                  placeholder="₱10,000"
+                />
               </div>
             </div>
-            <button id="applyFilters" class="mt-2 md:mt-0 px-4 py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition">Apply Filters</button>
+            <button
+              id="applyFilters"
+              class="mt-2 md:mt-0 px-4 py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition"
+            >
+              Apply Filters
+            </button>
           </div>
 
           <!-- ✅ Items Grid (Scrollable) -->
-          <div id="itemsGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-4 overflow-y-auto p-4 flex-1">
+          <div
+            id="itemsGrid"
+            class="grid gap-6 sm:grid-cols-2 md:grid-cols-4 overflow-y-auto p-4 flex-1"
+          >
             <!-- Items will render here -->
           </div>
         </div>
@@ -211,19 +286,22 @@
 
     <!-- ✅ User Dropdown JS -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const userMenuButton = document.getElementById('userMenuButton');
-        const userDropdown = document.getElementById('userDropdown');
+      document.addEventListener("DOMContentLoaded", () => {
+        const userMenuButton = document.getElementById("userMenuButton");
+        const userDropdown = document.getElementById("userDropdown");
 
         // Toggle dropdown
-        userMenuButton.addEventListener('click', () => {
-          userDropdown.classList.toggle('hidden');
+        userMenuButton.addEventListener("click", () => {
+          userDropdown.classList.toggle("hidden");
         });
 
         // Click outside to close
-        document.addEventListener('click', (e) => {
-          if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
-            userDropdown.classList.add('hidden');
+        document.addEventListener("click", (e) => {
+          if (
+            !userMenuButton.contains(e.target) &&
+            !userDropdown.contains(e.target)
+          ) {
+            userDropdown.classList.add("hidden");
           }
         });
       });
@@ -237,14 +315,14 @@
       function addToCart(itemId, index, event) {
         // Prevent event bubbling to parent div
         event.stopPropagation();
-        
+
         if (cartItems.has(itemId)) {
           return; // Already in cart, do nothing
         }
 
         // Add item to cart
         cartItems.add(itemId);
-        
+
         // Update button state
         const addToCartBtn = document.getElementById(`addToCartBtn-${index}`);
         if (addToCartBtn) {
@@ -254,22 +332,23 @@
             </svg>
             Already in Cart
           `;
-          addToCartBtn.className = 'mt-auto w-full py-2 rounded-md bg-gray-400 text-white font-semibold cursor-not-allowed transition';
+          addToCartBtn.className =
+            "mt-auto w-full py-2 rounded-md bg-gray-400 text-white font-semibold cursor-not-allowed transition";
           addToCartBtn.disabled = true;
           addToCartBtn.onclick = null; // Remove click handler
         }
 
         // Show success notification
-        showCartNotification('Added to Cart!', 'success');
+        showCartNotification("Added to Cart!", "success");
       }
 
       function showCartNotification(message, type) {
         // Create notification element
-        const notification = document.createElement('div');
+        const notification = document.createElement("div");
         notification.className = `fixed top-4 right-4 px-6 py-4 rounded-md text-white font-medium z-50 transition-all duration-300 transform translate-x-full ${
-          type === 'success' ? 'bg-amber-500' : 'bg-red-500'
+          type === "success" ? "bg-amber-500" : "bg-red-500"
         } shadow-lg`;
-        
+
         // Add cart icon and message
         notification.innerHTML = `
           <div class="flex items-center space-x-3">
@@ -279,18 +358,18 @@
             <span>${message}</span>
           </div>
         `;
-        
+
         // Add to page
         document.body.appendChild(notification);
-        
+
         // Slide in animation
         setTimeout(() => {
-          notification.style.transform = 'translateX(0)';
+          notification.style.transform = "translateX(0)";
         }, 100);
-        
+
         // Remove after 3 seconds with slide out animation
         setTimeout(() => {
-          notification.style.transform = 'translateX(100%)';
+          notification.style.transform = "translateX(100%)";
           setTimeout(() => {
             if (document.body.contains(notification)) {
               document.body.removeChild(notification);
@@ -300,47 +379,192 @@
       }
 
       const items = [
-        { name: 'Toyota Hilux Pickup', owner: 'John D.', category: 'Car', price: 2500, img: 'https://source.unsplash.com/400x250/?car', tags: ['pickup', 'truck', 'vehicle'] },
-        { name: 'Canon EOS DSLR', owner: 'Maria L.', category: 'Camera', price: 1200, img: 'https://source.unsplash.com/400x250/?camera', tags: ['camera', 'equipment'] },
-        { name: 'Bosch Power Drill', owner: 'Kevin S.', category: 'Tools', price: 400, img: 'https://source.unsplash.com/400x250/?drill', tags: ['drill', 'tools', 'equipment'] },
-        { name: 'Isuzu Elf Truck', owner: 'Carla M.', category: 'Car', price: 3000, img: 'https://source.unsplash.com/400x250/?truck', tags: ['truck', 'delivery', 'vehicle'] },
-        { name: 'CAT Backhoe Loader', owner: 'Miguel S.', category: 'Equipment', price: 10500, img: 'https://source.unsplash.com/400x250/?backhoe', tags: ['backhoe', 'heavy', 'equipment'] },
-        { name: 'Sigma Art Lens', owner: 'Anna P.', category: 'Camera', price: 800, img: 'https://source.unsplash.com/400x250/?camera,lens', tags: ['lens', 'camera', 'equipment'] },
-        { name: 'Giant MTB Bike', owner: 'Leo K.', category: 'Other', price: 600, img: 'https://source.unsplash.com/400x250/?bike', tags: ['bike', 'mtb', 'sports'] },
-        { name: 'Honda Generator', owner: 'Vince T.', category: 'Equipment', price: 1800, img: 'https://source.unsplash.com/400x250/?generator', tags: ['generator', 'power', 'equipment'] },
-        { name: 'DJI Drone', owner: 'Chloe R.', category: 'Camera', price: 2200, img: 'https://source.unsplash.com/400x250/?drone', tags: ['drone', 'camera', 'aerial'] },
-        { name: 'Yamaha Motorbike', owner: 'Jorge L.', category: 'Other', price: 2500, img: 'https://source.unsplash.com/400x250/?motorbike', tags: ['motorbike', 'vehicle'] },
-        { name: 'Sony Handycam', owner: 'Rina A.', category: 'Camera', price: 1000, img: 'https://source.unsplash.com/400x250/?handycam', tags: ['video', 'camera', 'recording'] },
-        { name: 'Power Washer', owner: 'Mike B.', category: 'Tools', price: 700, img: 'https://source.unsplash.com/400x250/?washer', tags: ['cleaning', 'tools'] },
-        { name: 'Nikon Z7 Mirrorless', owner: 'Lara C.', category: 'Camera', price: 1500, img: 'https://source.unsplash.com/400x250/?mirrorless', tags: ['camera', 'mirrorless', 'equipment'] },
-        { name: 'Ford Ranger', owner: 'Alex S.', category: 'Car', price: 2800, img: 'https://source.unsplash.com/400x250/?pickup,truck', tags: ['pickup', 'truck', 'vehicle'] },
-        { name: 'Makita Circular Saw', owner: 'Neil J.', category: 'Tools', price: 500, img: 'https://source.unsplash.com/400x250/?saw', tags: ['saw', 'cutting', 'tools'] },
-        { name: 'LED Light Kit', owner: 'Paula M.', category: 'Equipment', price: 300, img: 'https://source.unsplash.com/400x250/?lighting', tags: ['lighting', 'studio', 'equipment'] },
-        { name: 'Samsung Gear 360', owner: 'Ken V.', category: 'Camera', price: 900, img: 'https://source.unsplash.com/400x250/?360camera', tags: ['camera', '360', 'equipment'] },
-        { name: 'Hyundai Starex Van', owner: 'Grace T.', category: 'Car', price: 3200, img: 'https://source.unsplash.com/400x250/?van', tags: ['van', 'vehicle', 'transport'] },
-        { name: 'Concrete Mixer', owner: 'Diego F.', category: 'Equipment', price: 4200, img: 'https://source.unsplash.com/400x250/?mixer', tags: ['mixer', 'construction', 'equipment'] },
-        { name: 'Electric Chainsaw', owner: 'Sarah P.', category: 'Tools', price: 650, img: 'https://source.unsplash.com/400x250/?chainsaw', tags: ['chainsaw', 'cutting', 'tools'] },
+        {
+          name: "Toyota Hilux Pickup",
+          owner: "John D.",
+          category: "Car",
+          price: 2500,
+          img: "https://source.unsplash.com/400x250/?car",
+          tags: ["pickup", "truck", "vehicle"],
+        },
+        {
+          name: "Canon EOS DSLR",
+          owner: "Maria L.",
+          category: "Camera",
+          price: 1200,
+          img: "https://source.unsplash.com/400x250/?camera",
+          tags: ["camera", "equipment"],
+        },
+        {
+          name: "Bosch Power Drill",
+          owner: "Kevin S.",
+          category: "Tools",
+          price: 400,
+          img: "https://source.unsplash.com/400x250/?drill",
+          tags: ["drill", "tools", "equipment"],
+        },
+        {
+          name: "Isuzu Elf Truck",
+          owner: "Carla M.",
+          category: "Car",
+          price: 3000,
+          img: "https://source.unsplash.com/400x250/?truck",
+          tags: ["truck", "delivery", "vehicle"],
+        },
+        {
+          name: "CAT Backhoe Loader",
+          owner: "Miguel S.",
+          category: "Equipment",
+          price: 10500,
+          img: "https://source.unsplash.com/400x250/?backhoe",
+          tags: ["backhoe", "heavy", "equipment"],
+        },
+        {
+          name: "Sigma Art Lens",
+          owner: "Anna P.",
+          category: "Camera",
+          price: 800,
+          img: "https://source.unsplash.com/400x250/?camera,lens",
+          tags: ["lens", "camera", "equipment"],
+        },
+        {
+          name: "Giant MTB Bike",
+          owner: "Leo K.",
+          category: "Other",
+          price: 600,
+          img: "https://source.unsplash.com/400x250/?bike",
+          tags: ["bike", "mtb", "sports"],
+        },
+        {
+          name: "Honda Generator",
+          owner: "Vince T.",
+          category: "Equipment",
+          price: 1800,
+          img: "https://source.unsplash.com/400x250/?generator",
+          tags: ["generator", "power", "equipment"],
+        },
+        {
+          name: "DJI Drone",
+          owner: "Chloe R.",
+          category: "Camera",
+          price: 2200,
+          img: "https://source.unsplash.com/400x250/?drone",
+          tags: ["drone", "camera", "aerial"],
+        },
+        {
+          name: "Yamaha Motorbike",
+          owner: "Jorge L.",
+          category: "Other",
+          price: 2500,
+          img: "https://source.unsplash.com/400x250/?motorbike",
+          tags: ["motorbike", "vehicle"],
+        },
+        {
+          name: "Sony Handycam",
+          owner: "Rina A.",
+          category: "Camera",
+          price: 1000,
+          img: "https://source.unsplash.com/400x250/?handycam",
+          tags: ["video", "camera", "recording"],
+        },
+        {
+          name: "Power Washer",
+          owner: "Mike B.",
+          category: "Tools",
+          price: 700,
+          img: "https://source.unsplash.com/400x250/?washer",
+          tags: ["cleaning", "tools"],
+        },
+        {
+          name: "Nikon Z7 Mirrorless",
+          owner: "Lara C.",
+          category: "Camera",
+          price: 1500,
+          img: "https://source.unsplash.com/400x250/?mirrorless",
+          tags: ["camera", "mirrorless", "equipment"],
+        },
+        {
+          name: "Ford Ranger",
+          owner: "Alex S.",
+          category: "Car",
+          price: 2800,
+          img: "https://source.unsplash.com/400x250/?pickup,truck",
+          tags: ["pickup", "truck", "vehicle"],
+        },
+        {
+          name: "Makita Circular Saw",
+          owner: "Neil J.",
+          category: "Tools",
+          price: 500,
+          img: "https://source.unsplash.com/400x250/?saw",
+          tags: ["saw", "cutting", "tools"],
+        },
+        {
+          name: "LED Light Kit",
+          owner: "Paula M.",
+          category: "Equipment",
+          price: 300,
+          img: "https://source.unsplash.com/400x250/?lighting",
+          tags: ["lighting", "studio", "equipment"],
+        },
+        {
+          name: "Samsung Gear 360",
+          owner: "Ken V.",
+          category: "Camera",
+          price: 900,
+          img: "https://source.unsplash.com/400x250/?360camera",
+          tags: ["camera", "360", "equipment"],
+        },
+        {
+          name: "Hyundai Starex Van",
+          owner: "Grace T.",
+          category: "Car",
+          price: 3200,
+          img: "https://source.unsplash.com/400x250/?van",
+          tags: ["van", "vehicle", "transport"],
+        },
+        {
+          name: "Concrete Mixer",
+          owner: "Diego F.",
+          category: "Equipment",
+          price: 4200,
+          img: "https://source.unsplash.com/400x250/?mixer",
+          tags: ["mixer", "construction", "equipment"],
+        },
+        {
+          name: "Electric Chainsaw",
+          owner: "Sarah P.",
+          category: "Tools",
+          price: 650,
+          img: "https://source.unsplash.com/400x250/?chainsaw",
+          tags: ["chainsaw", "cutting", "tools"],
+        },
       ];
 
-      const grid = document.getElementById('itemsGrid');
-      const searchInput = document.getElementById('searchInput');
-      const categorySelect = document.getElementById('categorySelect');
-      const minPriceInput = document.getElementById('minPrice');
-      const maxPriceInput = document.getElementById('maxPrice');
-      const applyBtn = document.getElementById('applyFilters');
+      const grid = document.getElementById("itemsGrid");
+      const searchInput = document.getElementById("searchInput");
+      const categorySelect = document.getElementById("categorySelect");
+      const minPriceInput = document.getElementById("minPrice");
+      const maxPriceInput = document.getElementById("maxPrice");
+      const applyBtn = document.getElementById("applyFilters");
 
       function renderItems(filteredItems) {
-        grid.innerHTML = '';
+        grid.innerHTML = "";
         filteredItems.forEach((item, index) => {
-          const itemId = item.name.toLowerCase().replace(/\s+/g, '-') + '-' + index;
+          const itemId =
+            item.name.toLowerCase().replace(/\s+/g, "-") + "-" + index;
           grid.innerHTML += `
             <div class="bg-white rounded-lg shadow p-4 flex flex-col hover:shadow-lg transition">
               <!-- Clickable image/content area -->
               <div class="cursor-pointer" onclick="window.location.href='details.html'">
-                <img src="${item.img}" alt="${item.name}" class="rounded-md mb-3 object-cover h-40 w-full" />
+                <img src="${item.img}" alt="${
+            item.name
+          }" class="rounded-md mb-3 object-cover h-40 w-full" />
                 <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
                 <p class="text-gray-600">By ${item.owner}</p>
-                <p class="text-sm text-gray-500">Tags: ${item.tags.join(', ')}</p>
+                <p class="text-sm text-gray-500">Tags: ${item.tags.join(
+                  ", "
+                )}</p>
                 <p class="text-amber-500 font-semibold mb-2">₱${item.price.toLocaleString()}/day</p>
               </div>
               <!-- Action buttons -->
@@ -369,11 +593,12 @@
         const minPrice = parseInt(minPriceInput.value) || 0;
         const maxPrice = parseInt(maxPriceInput.value) || Infinity;
 
-        const filtered = items.filter(item => {
-          const matchesSearch = item.name.toLowerCase().includes(search)
-            || item.owner.toLowerCase().includes(search)
-            || item.tags.some(tag => tag.includes(search));
-          const matchesCategory = category === '' || item.category === category;
+        const filtered = items.filter((item) => {
+          const matchesSearch =
+            item.name.toLowerCase().includes(search) ||
+            item.owner.toLowerCase().includes(search) ||
+            item.tags.some((tag) => tag.includes(search));
+          const matchesCategory = category === "" || item.category === category;
           const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
           return matchesSearch && matchesCategory && matchesPrice;
         });
@@ -382,8 +607,7 @@
       }
 
       renderItems(items);
-      applyBtn.addEventListener('click', applyFilters);
+      applyBtn.addEventListener("click", applyFilters);
     </script>
-
   </body>
 </html>
