@@ -548,7 +548,45 @@
       const maxPriceInput = document.getElementById("maxPrice");
       const applyBtn = document.getElementById("applyFilters");
 
-      function renderItems(filteredItems) {
+      // function renderItems(filteredItems) {
+      //   grid.innerHTML = "";
+      //   filteredItems.forEach((item, index) => {
+      //     const itemId =
+      //       item.name.toLowerCase().replace(/\s+/g, "-") + "-" + index;
+      //     grid.innerHTML += `
+      //       <div class="bg-white rounded-lg shadow p-4 flex flex-col hover:shadow-lg transition">
+      //         <!-- Clickable image/content area -->
+      //         <div class="cursor-pointer" onclick="window.location.href='details.html'">
+      //           <img src="${item.img}" alt="${
+      //       item.name
+      //     }" class="rounded-md mb-3 object-cover h-40 w-full" />
+      //           <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
+      //           <p class="text-gray-600">By ${item.owner}</p>
+      //           <p class="text-sm text-gray-500">Tags: ${item.tags.join(
+      //             ", "
+      //           )}</p>
+      //           <p class="text-amber-500 font-semibold mb-2">₱${item.price.toLocaleString()}/day</p>
+      //         </div>
+      //         <!-- Action buttons -->
+      //         <div class="mt-auto flex flex-col gap-2">
+      //           <button 
+      //             id="addToCartBtn-${index}"
+      //             onclick="addToCart('${itemId}', ${index}, event)"
+      //             class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition"
+      //           >
+      //             Add to Cart
+      //           </button>
+      //           <button 
+      //             onclick="window.location.href='checkout.html'"
+      //             class="w-full py-2 rounded-md bg-black text-white font-semibold hover:bg-gray-800 transition"
+      //           >
+      //             Rent Now
+      //           </button>
+      //         </div>
+      //       </div>`;
+      //   });
+      // }
+       function renderItems(filteredItems) {
         grid.innerHTML = "";
         filteredItems.forEach((item, index) => {
           const itemId =
@@ -557,14 +595,12 @@
             <div class="bg-white rounded-lg shadow p-4 flex flex-col hover:shadow-lg transition">
               <!-- Clickable image/content area -->
               <div class="cursor-pointer" onclick="window.location.href='details.html'">
-                <img src="${item.img}" alt="${
-            item.name
-          }" class="rounded-md mb-3 object-cover h-40 w-full" />
+                <div class="bg-gray-100 rounded-md mb-3 h-40 w-full flex items-center justify-center overflow-hidden">
+                  <img src="${item.img}" alt="${item.name}" class="max-w-full max-h-full object-contain" />
+                </div>
                 <h3 class="text-lg font-bold text-gray-800">${item.name}</h3>
                 <p class="text-gray-600">By ${item.owner}</p>
-                <p class="text-sm text-gray-500">Tags: ${item.tags.join(
-                  ", "
-                )}</p>
+                <p class="text-sm text-gray-500">Tags: ${item.tags.join(", ")}</p>
                 <p class="text-amber-500 font-semibold mb-2">₱${item.price.toLocaleString()}/day</p>
               </div>
               <!-- Action buttons -->
