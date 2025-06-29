@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RentHIVE Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- ✅ Header -->
+    <header class="bg-amber-500 shadow relative">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <div class="flex items-center space-x-2">
+          <img src="logo.png" alt="RentHIVE" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHIVE</span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="homepage.html" class="text-white hover:underline">Home</a>
+          <a href="#" class="text-white hover:underline">Categories</a>
+          <a href="#" class="text-white hover:underline">About</a>
+          <a href="#" class="text-white hover:underline">Contact</a>
+        </nav>
+        <div class="relative flex items-center space-x-4">
+          <a href="cart.html" class="text-white hover:text-amber-100">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M5 21h14"
+              />
+            </svg>
+          </a>
+          <div class="relative">
+            <button
+              id="userMenuButton"
+              class="flex items-center space-x-2 text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </button>
+            <div
+              id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50"
+            >
+              <a
+                href="profile.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-amber-50"
+                >Profile</a
+              >
+              <a
+                href="admin.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-amber-50"
+                >Admin Dashboard</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ✅ Cart Section -->
+    <main class="max-w-7xl mx-auto my-10 px-4">
+      <h1 class="text-3xl font-bold text-amber-500 mb-6 text-center">
+        Your Cart
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- ✅ Left: Item List -->
+        <div class="md:col-span-2 bg-white shadow rounded-lg">
+          <div id="cartItems" class="divide-y">
+            <!-- Items will be rendered here -->
+          </div>
+          <div class="p-4 text-center">
+            <a
+              href="homepage.html"
+              class="inline-block bg-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-md hover:bg-gray-400 transition"
+            >
+              Back to Home
+            </a>
+          </div>
+        </div>
+
+        <!-- ✅ Right: Summary -->
+        <div class="bg-white shadow rounded-lg p-6 space-y-4">
+          <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">
+            Summary
+          </h2>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Subtotal</span>
+            <span id="subtotal" class="font-medium text-gray-800">₱0</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700">Discount</span>
+            <span id="discount" class="font-medium text-gray-800">₱0</span>
+          </div>
+          <div class="flex justify-between border-t pt-2">
+            <span class="text-lg font-bold text-gray-800">Total</span>
+            <span id="total" class="text-lg font-bold text-amber-500">₱0</span>
+          </div>
+          <a
+            id="checkoutButton"
+            href="checkout.html"
+            class="block text-center bg-amber-500 text-white font-semibold px-4 py-3 rounded-md hover:bg-amber-600 transition"
+          >
+            Proceed to Checkout
+          </a>
+        </div>
+      </div>
+
+      <!-- ✅ Things You Might Need -->
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-amber-500 mb-6 text-center">
+          Things You Might Need
+        </h2>
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div
+            onclick="window.location.href='details.html'"
+            class="cursor-pointer bg-white rounded-lg shadow hover:shadow-lg transition p-4"
+          >
+            <img
+              src="https://source.unsplash.com/400x250/?tool"
+              alt="Extra Tool"
+              class="rounded-md mb-3 object-cover h-40 w-full"
+            />
+            <h3 class="text-lg font-bold text-gray-800">Makita Circular Saw</h3>
+            <p class="text-sm text-gray-600">Owner: Neil J.</p>
+            <p class="text-amber-500 font-semibold">₱500/day</p>
+          </div>
+          <div
+            onclick="window.location.href='details.html'"
+            class="cursor-pointer bg-white rounded-lg shadow hover:shadow-lg transition p-4"
+          >
+            <img
+              src="https://source.unsplash.com/400x250/?lighting"
+              alt="Lighting Kit"
+              class="rounded-md mb-3 object-cover h-40 w-full"
+            />
+            <h3 class="text-lg font-bold text-gray-800">LED Light Kit</h3>
+            <p class="text-sm text-gray-600">Owner: Paula M.</p>
+            <p class="text-amber-500 font-semibold">₱300/day</p>
+          </div>
+          <div
+            onclick="window.location.href='details.html'"
+            class="cursor-pointer bg-white rounded-lg shadow hover:shadow-lg transition p-4"
+          >
+            <img
+              src="https://source.unsplash.com/400x250/?van"
+              alt="Van Rental"
+              class="rounded-md mb-3 object-cover h-40 w-full"
+            />
+            <h3 class="text-lg font-bold text-gray-800">Hyundai Starex Van</h3>
+            <p class="text-sm text-gray-600">Owner: Grace T.</p>
+            <p class="text-amber-500 font-semibold">₱3,200/day</p>
+          </div>
+          <div
+            onclick="window.location.href='details.html'"
+            class="cursor-pointer bg-white rounded-lg shadow hover:shadow-lg transition p-4"
+          >
+            <img
+              src="https://source.unsplash.com/400x250/?mixer"
+              alt="Concrete Mixer"
+              class="rounded-md mb-3 object-cover h-40 w-full"
+            />
+            <h3 class="text-lg font-bold text-gray-800">Concrete Mixer</h3>
+            <p class="text-sm text-gray-600">Owner: Diego F.</p>
+            <p class="text-amber-500 font-semibold">₱4,200/day</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ Cart Data & JS -->
+    <script>
+      let cartData = [
+        {
+          name: "Toyota Hilux Pickup",
+          owner: "John D.",
+          price: 2500,
+          img: "https://source.unsplash.com/400x250/?car",
+        },
+        {
+          name: "Canon EOS DSLR",
+          owner: "Maria L.",
+          price: 1200,
+          img: "https://source.unsplash.com/400x250/?camera",
+        },
+        {
+          name: "CAT Backhoe Loader",
+          owner: "Miguel S.",
+          price: 10500,
+          img: "https://source.unsplash.com/400x250/?backhoe",
+        },
+        {
+          name: "Bosch Power Drill",
+          owner: "Kevin S.",
+          price: 400,
+          img: "https://source.unsplash.com/400x250/?drill",
+        },
+        {
+          name: "Honda Generator",
+          owner: "Vince T.",
+          price: 1800,
+          img: "https://source.unsplash.com/400x250/?generator",
+        },
+      ];
+
+      function renderCart() {
+        const cartItems = document.getElementById("cartItems");
+        cartItems.innerHTML = "";
+
+        if (cartData.length === 0) {
+          cartItems.innerHTML =
+            '<p class="text-center p-6 text-gray-500">Your cart is empty.</p>';
+          document
+            .getElementById("checkoutButton")
+            .classList.add("opacity-50", "pointer-events-none");
+          updateSummary();
+          return;
+        } else {
+          document
+            .getElementById("checkoutButton")
+            .classList.remove("opacity-50", "pointer-events-none");
+        }
+
+        cartData.forEach((item, index) => {
+          cartItems.innerHTML += `
+          <div class="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition">
+            <div class="flex items-center space-x-4 cursor-pointer" onclick="window.location.href='details.html'">
+              <img src="${item.img}" alt="${
+            item.name
+          }" class="h-16 w-24 rounded-md object-cover shadow">
+              <div>
+                <h3 class="font-semibold text-gray-800 hover:underline">${
+                  item.name
+                }</h3>
+                <p class="text-sm text-gray-600">Owner: ${item.owner}</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <p class="text-amber-500 font-bold">₱${item.price.toLocaleString()}/day</p>
+              <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 transition">
+                Remove
+              </button>
+            </div>
+          </div>
+        `;
+        });
+        updateSummary();
+      }
+
+      function updateSummary() {
+        let subtotal = cartData.reduce((sum, item) => sum + item.price, 0);
+        let discount = 0;
+        let total = subtotal - discount;
+
+        document.getElementById(
+          "subtotal"
+        ).textContent = `₱${subtotal.toLocaleString()}`;
+        document.getElementById(
+          "discount"
+        ).textContent = `₱${discount.toLocaleString()}`;
+        document.getElementById(
+          "total"
+        ).textContent = `₱${total.toLocaleString()}`;
+      }
+
+      function removeItem(index) {
+        cartData.splice(index, 1);
+        renderCart();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCart();
+
+        const userMenuButton = document.getElementById("userMenuButton");
+        const userDropdown = document.getElementById("userDropdown");
+
+        userMenuButton.addEventListener("click", () => {
+          userDropdown.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !userMenuButton.contains(e.target) &&
+            !userDropdown.contains(e.target)
+          ) {
+            userDropdown.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
