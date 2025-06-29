@@ -14,34 +14,46 @@
   <body class="bg-gray-50 font-sans">
     <!-- ✅ HEADER -->
    <header class="bg-amber-500 shadow relative">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
     <!-- Logo -->
-            <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-2" onclick="window.location.href='homepage.html'">
       <img src="logo.png" alt="RentHIVE" class="h-10">
       <span class="text-2xl font-bold text-white">RentHIVE</span>
-            </div>
+    </div>
     <!-- Nav Links -->
-            <nav class="hidden md:flex space-x-6">
-      <a href="#" class="text-white hover:underline">Home</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="homepage.html" class="text-white hover:underline">Home</a>
       <a href="#" class="text-white hover:underline">Categories</a>
       <a href="#" class="text-white hover:underline">About</a>
       <a href="#" class="text-white hover:underline">Contact</a>
-            </nav>
-    <!-- User Dropdown -->
-            <div class="relative">
-                <button id="userMenuButton" class="flex items-center space-x-2 text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                </button>
-                <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-                    <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Profile</a>
-                    <a href="renter_dashboard.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Admin Dashboard</a>
-                    <a href="cart.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Cart</a>
-                </div>
-            </div>
+    </nav>
+    <!-- Icons -->
+    <div class="relative flex items-center space-x-4">
+      <!-- Cart Icon -->
+      <a href="cart.html" class="text-white hover:text-amber-100 relative">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M5 21h14" />
+        </svg>
+      </a>
+      <!-- User Dropdown -->
+      <div class="relative">
+        <button id="userMenuButton" class="flex items-center space-x-2 text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </button>
+        <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+          <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Profile</a>
+          <a href="renter_dashboard.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50">Admin Dashboard</a>
         </div>
-    </header>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
 
     <!-- ✅ HERO SECTION -->
     <section class="relative overflow-hidden">
