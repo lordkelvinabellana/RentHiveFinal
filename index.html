@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi" />
+     <link rel="icon" type="image/png" href="logo.png">
 
     <script src="https://cdn.tailwindcss.com">
       tailwind.config = {
@@ -31,7 +32,7 @@
             Please sign in to continue
           </p>
         </div>
-        <form class="space-y-4" action="homepage.html" method="GET">
+        <form id="loginForm" class="space-y-4">
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700"
               >Email</label
@@ -39,6 +40,7 @@
             <input
               type="email"
               id="email"
+              name="email"
               class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
               placeholder="you@example.com"
               required
@@ -53,11 +55,52 @@
             <input
               type="password"
               id="password"
+              name="password"
               class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-lime-400 focus:ring-lime-400"
               placeholder="••••••••"
               required
             />
           </div>
+
+          <!-- Role Selection -->
+          <fieldset>
+            <legend class="block text-sm font-medium text-gray-700 mb-2">
+              Log in as:
+            </legend>
+            <div class="flex space-x-6">
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="loginRole"
+                  value="lessee"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Lessee (Renter)</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="loginRole"
+                  value="leaser"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Leaser (Owner)</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="loginRole"
+                  value="both"
+                  required
+                  class="text-amber-500 focus:ring-amber-400"
+                />
+                <span class="ml-2 text-gray-700">Both</span>
+              </label>
+            </div>
+          </fieldset>
+
           <button
             type="submit"
             class="w-full py-2 rounded-md bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-200"
@@ -73,5 +116,120 @@
         </p>
       </div>
     </header>
+
+    <!-- Loading Modal -->
+    <div id="loginLoadingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+        <div class="mb-4">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"></div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Logging you in...</h3>
+        <p class="text-gray-600">Please wait while we prepare your dashboard.</p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('loginForm');
+        
+        if (!form) {
+          console.error('Login form not found!');
+          return;
+        }
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          
+          // Get selected role
+          const roleInputs = document.querySelectorAll('input[name="loginRole"]:checked');
+          
+          if (roleInputs.length === 0) {
+            alert('Please select your login role');
+            return;
+          }
+          
+          const selectedRole = roleInputs[0].value;
+          console.log('Login role selected:', selectedRole);
+          
+          // Basic validation
+          if (!email || !password) {
+            alert('Please fill in all fields');
+            return;
+          }
+          
+          // Show loading modal
+          const loadingModal = document.getElementById('loginLoadingModal');
+          if (loadingModal) {
+            loadingModal.classList.remove('hidden');
+          }
+          
+          // Simulate login process
+          setTimeout(() => {
+            // Hide loading modal
+            if (loadingModal) {
+              loadingModal.classList.add('hidden');
+            }
+            
+            // Redirect based on role
+            if (selectedRole === 'leaser' || selectedRole === 'both') {
+              window.location.href = 'renter_dashboard.html';
+            } else {
+              console.log('Redirecting to homepage');
+              window.location.href = 'homepage.html';
+            }
+          }, 1500); // 1.5 second delay for loading effect
+        });
+
+        // Role selection feedback
+        const roleInputs = document.querySelectorAll('input[name="loginRole"]');
+        roleInputs.forEach(input => {
+          input.addEventListener('change', function() {
+            console.log('Login role changed to:', this.value);
+            
+            // Remove existing role info
+            const roleInfo = document.getElementById('loginRoleInfo');
+            if (roleInfo) roleInfo.remove();
+            
+            // let infoText = '';
+            // switch(this.value) {
+            //   case 'lessee':
+            //     infoText = 'Access the renter dashboard to browse and rent items.';
+            //     break;
+            //   case 'leaser':
+            //     infoText = 'Access the owner dashboard to manage your rental listings.';
+            //     break;
+            //   case 'both':
+            //     infoText = 'Access the owner dashboard with full functionality.';
+            //     break;
+            // }
+            
+            const infoDiv = document.createElement('div');
+            infoDiv.id = 'loginRoleInfo';
+            infoDiv.className = 'mt-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800';
+            infoDiv.textContent = infoText;
+            
+            this.closest('fieldset').appendChild(infoDiv);
+          });
+        });
+
+        // Form field validation feedback
+        const inputs = form.querySelectorAll('input[required]');
+        inputs.forEach(input => {
+          input.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+              this.classList.add('border-red-500');
+              this.classList.remove('border-gray-300');
+            } else {
+              this.classList.remove('border-red-500');
+              this.classList.add('border-gray-300');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

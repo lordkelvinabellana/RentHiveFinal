@@ -44,7 +44,7 @@
           Tell us about yourself to get started on RentHIVE.
         </p>
 
-        <form action="homepage.html" method="GET" class="space-y-6">
+        <form id="profileForm" class="space-y-6">
           <!-- Full Name -->
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700"
@@ -105,7 +105,7 @@
                 <input
                   type="radio"
                   name="role"
-                  value="leaser"
+                  value="both"
                   required
                   class="text-amber-500 focus:ring-amber-400"
                 />
@@ -175,5 +175,89 @@
         </form>
       </div>
     </main>
+
+    <!-- Success Loading Modal -->
+    <div id="loadingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+        <div class="mb-4">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto"></div>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Setting up your profile...</h3>
+        <p class="text-gray-600">Please wait while we prepare your dashboard.</p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('profileForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading modal
+        document.getElementById('loadingModal').classList.remove('hidden');
+        
+        // Get form data
+        const formData = new FormData(this);
+        const selectedRole = formData.get('role');
+        
+        // Simulate form processing delay
+        setTimeout(() => {
+          // Hide loading modal
+          document.getElementById('loadingModal').classList.add('hidden');
+          
+          // Redirect based on role
+          if (selectedRole === 'leaser' || selectedRole === 'both') {
+            // Redirect to rentee dashboard for owners
+            window.location.href = 'new_user_dashboard.html';
+          } else {
+            // Redirect to homepage for renters
+            window.location.href = 'homepage.html';
+          }
+        }, 2000); // 2 second delay to show loading
+      });
+
+      // Form validation feedback
+      const form = document.getElementById('profileForm');
+      const inputs = form.querySelectorAll('input[required]');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.value.trim() === '') {
+            this.classList.add('border-red-500');
+            this.classList.remove('border-gray-300');
+          } else {
+            this.classList.remove('border-red-500');
+            this.classList.add('border-gray-300');
+          }
+        });
+      });
+
+      // Role selection feedback
+      const roleInputs = document.querySelectorAll('input[name="role"]');
+      roleInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          const roleInfo = document.getElementById('roleInfo');
+          if (roleInfo) roleInfo.remove();
+          
+          let infoText = '';
+          switch(this.value) {
+            case 'lessee':
+              infoText = 'As a Renter, you can browse and rent items from other users.';
+              break;
+            case 'leaser':
+              infoText = 'As an Owner, you can list your items for rent and earn money.';
+              break;
+            case 'both':
+              infoText = 'You can both rent items and list your own items for rent.';
+              break;
+          }
+          
+          const infoDiv = document.createElement('div');
+          infoDiv.id = 'roleInfo';
+          infoDiv.className = 'mt-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800';
+          infoDiv.textContent = infoText;
+          
+          this.closest('fieldset').appendChild(infoDiv);
+        });
+      });
+    </script>
   </body>
 </html>

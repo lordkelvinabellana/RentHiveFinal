@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com">
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>RentHIVE - Owner Dashboard</title>
+  </head>
+  <body class="font-sans antialiased bg-gray-50">
+    <!-- Header -->
+    <header class="bg-amber-500 shadow">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <div class="flex items-center space-x-2">
+          <img src="logo.png" alt="RentHIVE" class="h-10" />
+          <span class="text-2xl font-bold text-white">RentHIVE</span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="homepage.html" class="text-white hover:underline">Browse Items</a>
+          <a href="#" class="text-white hover:underline">Categories</a>
+          <a href="#" class="text-white hover:underline">About</a>
+          <a href="#" class="text-white hover:underline">Contact</a>
+        </nav>
+        <div class="flex space-x-4">
+          <a href="profile.html" class="text-white hover:text-amber-100">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.121 17.804A9.977 9.977 0 0112 15c2.314 0 4.44.784 6.121 2.096M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </a>
+          <a href="cart.html" class="text-white hover:text-amber-100">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M5 21h14"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto mt-8 px-4 space-y-8">
+      <!-- Welcome Section for New User -->
+      <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg shadow-lg p-8 text-white">
+        <h1 class="text-4xl font-bold mb-4">
+          Welcome to RentHIVE, Miguel! 🎉
+        </h1>
+        <p class="text-xl mb-4">
+          You're all set to start your rental business journey!
+        </p>
+        <p class="text-lg opacity-90">
+          Add your first product below to begin earning from your items.
+        </p>
+      </div>
+
+      <!-- Getting Started Section -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Getting Started</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="text-center p-6 border-2 border-dashed border-gray-200 rounded-lg">
+            <div class="text-4xl mb-4">📝</div>
+            <h3 class="font-semibold text-gray-800 mb-2">1. Add Your First Product</h3>
+            <p class="text-gray-600 text-sm">List an item you want to rent out with photos and details.</p>
+          </div>
+          <div class="text-center p-6 border-2 border-dashed border-gray-200 rounded-lg">
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="font-semibold text-gray-800 mb-2">2. Set Competitive Pricing</h3>
+            <p class="text-gray-600 text-sm">Research similar items and price competitively.</p>
+          </div>
+          <div class="text-center p-6 border-2 border-dashed border-gray-200 rounded-lg">
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="font-semibold text-gray-800 mb-2">3. Start Earning</h3>
+            <p class="text-gray-600 text-sm">Watch your analytics grow as customers rent your items.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Section (Empty State) -->
+      <section class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800">Analytics Overview</h2>
+        
+        <!-- Analytics Cards (All Zero) -->
+        <div class="grid md:grid-cols-4 gap-6">
+          <!-- Total Products -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="text-3xl font-bold text-gray-400 mb-2">0</div>
+            <p class="text-gray-600">Total Products</p>
+          </div>
+          
+          <!-- Total Rentals -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="text-3xl font-bold text-gray-400 mb-2">0</div>
+            <p class="text-gray-600">Total Rentals</p>
+          </div>
+          
+          <!-- Total Earnings -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="text-3xl font-bold text-gray-400 mb-2">₱0</div>
+            <p class="text-gray-600">Total Earnings</p>
+          </div>
+          
+          <!-- Average Days -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="text-3xl font-bold text-gray-400 mb-2">0</div>
+            <p class="text-gray-600">Avg. Rental Days</p>
+          </div>
+        </div>
+
+        <!-- Empty Most Rented Products -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Most Rented Products
+          </h3>
+          <div class="text-center py-12">
+            <div class="text-6xl text-gray-300 mb-4">📦</div>
+            <h4 class="text-lg font-semibold text-gray-600 mb-2">No rental data yet</h4>
+            <p class="text-gray-500">Add products to start tracking your rental performance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Products Section (Empty) -->
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold text-gray-800">My Products</h2>
+          <button
+            onclick="window.location.href='add_product.html'"
+            class="bg-amber-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-amber-600 transition-colors duration-200 flex items-center space-x-2"
+          >
+            <span>+ Add Your First Product</span>
+          </button>
+        </div>
+
+        <!-- Empty Products State -->
+        <div class="bg-white rounded-lg shadow-lg p-12 text-center">
+          <div class="text-8xl text-gray-300 mb-6">🏪</div>
+          <h3 class="text-2xl font-bold text-gray-600 mb-4">Start Building Your Rental Business</h3>
+          <p class="text-gray-500 mb-8 max-w-md mx-auto">
+            You haven't added any products yet. Add your first item to start earning money from things you already own.
+          </p>
+          <button
+            onclick="window.location.href='add_product.html'"
+            class="bg-amber-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-amber-600 transition-colors duration-200 text-lg"
+          >
+            Add Your First Product
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
